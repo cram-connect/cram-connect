@@ -19,7 +19,8 @@
     "sweetalert": "^2.1.2",
     "uniforms": "^2.6.5",
     "uniforms-bridge-simple-schema-2": "^2.6.5",
-    "uniforms-semantic": "^2.6.5"
+    "uniforms-semantic": "^2.6.5",
+    "webfontloader": "1.6.28"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
