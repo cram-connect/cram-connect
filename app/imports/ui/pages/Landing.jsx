@@ -1,33 +1,39 @@
 import React from 'react';
-import { Grid, Icon, Header } from 'semantic-ui-react';
+import { Grid, Header, Image } from 'semantic-ui-react';
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
   render() {
+    const divStyle = { paddingTop: '15px', color: 'white', fontSize: '16px' };
+    const attention = { paddingTop: '15px', color: 'white', fontSize: '14px' };
+    const tagline = { paddingTop: '15px', color: 'white', fontSize: '30px', fontFamily: 'Pacifico' };
+
     return (
-        <div className='background'>
+        <div style={divStyle} className="ui center aligned container">
           <Grid container stackable centered columns={3}>
-
             <Grid.Column textAlign='center'>
-              <Icon size='huge' name='users' inverted/>
-              <Header as='h1' inverted>Multiple Users</Header>
-              <Header as='h3' inverted>This address book enables any number of users to register and save their business
-                contacts. You can only see the contacts you have created.</Header>
+              <Image src="/images/uhmseal.png"
+                     size='medium' centered/>
             </Grid.Column>
 
             <Grid.Column textAlign='center'>
-              <Icon size='huge' name='file alternate' inverted/>
-              <Header as='h1' inverted>Contact Details</Header>
-              <Header as='h3' inverted>For each contact, you can save their names, address, and phone number.</Header>
+              <Header as='h2' inverted> Cram Connect </Header>
+              <font style={attention}>
+                Are you tired of being unable to focus on your assignments because of your crazy roommate?
+                Perhaps you&#39;re too comfortable in the quiet of your room and need a fast-paced environment
+                to get the juices flowing?
+                Cram Connect allows you to discover study spots throughout the UH Manoa campus and connect with
+                other students who are looking for their perfect study environment.
+              </font>
+              <br/>
+              <br/>
+              <font style={tagline}>Find your sweet spot!</font>
             </Grid.Column>
 
             <Grid.Column textAlign='center'>
-              <Icon size='huge' name='calendar check' inverted/>
-              <Header as='h1' inverted>Timestamped Notes</Header>
-              <Header as='h3' inverted>Each time you make contact with a contact, you can write a note that summarizes
-                the conversation. This note is saved along the timestamp of the contact.</Header>
+              <Image src="/images/books.png"
+                     size='medium' centered/>
             </Grid.Column>
-
           </Grid>
         </div>
     );
