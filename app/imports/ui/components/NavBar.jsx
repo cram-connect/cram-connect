@@ -16,7 +16,7 @@ class NavBar extends React.Component {
           <Header inverted as='h1'>digits</Header>
         </Menu.Item>
         {this.props.currentUser ? (
-            [<Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add' inverted>Add Contact
+            [<Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add' inverted='true'>Add Contact
             </Menu.Item>,
               <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='list'>List Contacts</Menu.Item>]
         ) : ''}
@@ -34,6 +34,7 @@ class NavBar extends React.Component {
           ) : (
             <Dropdown text={this.props.currentUser} pointing="top right" icon={'user'}>
               <Dropdown.Menu>
+                <Dropdown.Item icon="user" text="Edit Profile" as={NavLink} exact to="/profile"/>
                 <Dropdown.Item icon="sign out" text="Sign Out" as={NavLink} exact to="/signout"/>
               </Dropdown.Menu>
             </Dropdown>
