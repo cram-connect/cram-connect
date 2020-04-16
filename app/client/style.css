@@ -9,7 +9,10 @@
 }
 
 h2.ui.inverted.header{
+  font-family: 'Lexend Deca';
   font-size: 54px;
+  padding-top: 50px;
+  padding-bottom: 10px;
 }
 
 .ui.icon.button {
