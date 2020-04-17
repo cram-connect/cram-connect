@@ -42,11 +42,11 @@ In the register page, users are able to create a new account for the website.
 
 Upon login, the user is able add contacts or view their current contacts.
 
-#### Add Contacts page
+#### Add Places page
 
 In this page, users are able to add new contacts to their account.
 
-#### List Contacts page
+#### List Places page
 
 The user can edit current contacts or add notes to their contacts.
 
