@@ -25,9 +25,8 @@
    }
   ],
   "defaultProfiles": [
-    {
-      "firstName": "Matt", "lastName": "Saha", "email": "saharama@hawaii.edu", "major": "Computer Science", "image": "https://philipmjohnson.github.io/images/philip2.jpeg"
-    }
-
+    { "firstName": "Admin", "lastName": "Istrator", "email": "admin@foo.com", "major": "Chemistry", "image": "https://marionne.github.io/images/marionnesphoto.jpg" },
+    { "firstName": "John", "lastName": "Kanpo", "email": "john@foo.com", "major": "Liberal Arts", "image": "https://saharama.github.io/images/msahara.jpg" },
+    { "firstName": "Matt", "lastName": "Saha", "email": "saharama@hawaii.edu", "major": "Computer Science", "image": "https://philipmjohnson.github.io/images/philip2.jpeg" }
   ]
 }
