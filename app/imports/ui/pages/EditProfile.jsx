@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Loader, Header, Segment } from 'semantic-ui-react';
+import { Grid, Loader, Header, Segment, Image, Button } from 'semantic-ui-react';
 import swal from 'sweetalert';
 import { AutoForm, ErrorsField, SubmitField, TextField, HiddenField } from 'uniforms-semantic';
 import { Meteor } from 'meteor/meteor';
@@ -19,6 +19,27 @@ class EditProfile extends React.Component {
         swal('Success', 'Item updated successfully', 'success')));
   }
 
+  /** If user wants to edit profile image, prompt for input with swal */
+  changeImage(data) {
+    const { firstName, lastName, major, image, _id } = data;
+    swal({
+      title: 'Edit Profile Image?',
+      text: 'Enter a new image URL.',
+      icon: 'info',
+      content: 'input',
+      buttons: ['Cancel', 'Submit'],
+    })
+    .then((imageUrl) => {
+      if (imageUrl) {
+        Profiles.update(_id, { $set: { firstName, lastName, major, imageUrl } }, (error) => (error ?
+            swal('Error', error.message, 'error') :
+            swal('Success', 'Item updated successfully', 'success')));
+      } else {
+        swal('Image Update Cancelled');
+      }
+    });
+  }
+
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {
     return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
@@ -30,17 +51,28 @@ class EditProfile extends React.Component {
         <Grid container centered>
           <Grid.Column>
             <Header as="h2" textAlign="center" inverted>Edit Profile</Header>
-            <AutoForm schema={ProfileSchema} onSubmit={data => this.submit(data)} model={this.props.doc}>
               <Segment>
-                <TextField name='firstName'/>
-                <TextField name='lastName'/>
-                <TextField name='major'/>
-                <TextField name='image'/>
-                <SubmitField value='Save Profile'/>
-                <ErrorsField/>
-                <HiddenField name='email'/>
+                <Grid>
+                  <Grid.Column width={5}>
+                    <Image src={this.props.doc.image} fluid bordered/>
+                    <Button color='teal' onClick={(data) => this.changeImage(data)} fluid>
+                      Edit Profile Image
+                    </Button>
+                  </Grid.Column>
+                  <Grid.Column width={11}>
+                    <AutoForm schema={ProfileSchema} onSubmit={data => this.submit(data)} model={this.props.doc}>
+                      <TextField name='firstName'/>
+                      <TextField name='lastName'/>
+                      <TextField name='major'/>
+                      <TextField name='image'/>
+                      <SubmitField value='Save Profile'/>
+                      <ErrorsField/>
+                      <HiddenField name='email'/>
+                    </AutoForm>
+                  </Grid.Column>
+                </Grid>
               </Segment>
-            </AutoForm>
+
           </Grid.Column>
         </Grid>
     );
