@@ -20,8 +20,7 @@ class EditProfile extends React.Component {
   }
 
   /** If user wants to edit profile image, prompt for input with swal */
-  changeImage(data) {
-    const { firstName, lastName, major, image, _id } = data;
+  changeImage() {
     swal({
       title: 'Edit Profile Image?',
       text: 'Enter a new image URL.',
@@ -31,7 +30,7 @@ class EditProfile extends React.Component {
     })
     .then((imageUrl) => {
       if (imageUrl) {
-        Profiles.update(_id, { $set: { firstName, lastName, major, imageUrl } }, (error) => (error ?
+        Profiles.update(this.props.doc._id, { $set: { image: imageUrl } }, (error) => (error ?
             swal('Error', error.message, 'error') :
             swal('Success', 'Item updated successfully', 'success')));
       } else {
@@ -55,7 +54,7 @@ class EditProfile extends React.Component {
                 <Grid>
                   <Grid.Column width={5}>
                     <Image src={this.props.doc.image} fluid bordered/>
-                    <Button color='teal' onClick={(data) => this.changeImage(data)} fluid>
+                    <Button color='teal' onClick={() => this.changeImage()} fluid>
                       Edit Profile Image
                     </Button>
                   </Grid.Column>
