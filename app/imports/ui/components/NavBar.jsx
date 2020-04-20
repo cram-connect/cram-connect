@@ -29,7 +29,7 @@ class NavBar extends React.Component {
               ) : ''}
               <Menu.Item position="right">
                 {this.props.currentUser === '' ? (
-                    <Button positive pointing="top right" icon='large user' as={NavLink} exact to="/signin">
+                    <Button basic inverted pointing="top right" content="Sign-In" as={NavLink} exact to="/signin">
                     </Button>
                 ) : (
                     <Dropdown text={this.props.currentUser} pointing="top right" icon={'user'}>
