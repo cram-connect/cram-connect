@@ -10,6 +10,8 @@ import { Roles } from 'meteor/alanning:roles';
 class NavBar extends React.Component {
   render() {
     const menuStyle = { marginBottom: '2px', color: 'white' };
+    const menuNavText = { color: '#d7ffc4fa', fontSize: '22px', fontFamily: 'Oswald'};
+    const userNavText = { color: '#d7ffc4fa', fontSize: '18px', fontFamily: 'Oswald'};
     return (
         <div className="ui center aligned container">
           <Menu style={menuStyle} attached="top" borderless inverted>
@@ -18,11 +20,12 @@ class NavBar extends React.Component {
                 <Header inverted as='h1'>Cram Connect</Header>
               </Menu.Item>
               {this.props.currentUser ? (
-                  // eslint-disable-next-line max-len
-                  [<Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add' inverted='true'>Add Contact
+                  [<Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add' inverted='true'>
+                    <font style={menuNavText}>Add a Spot</font>
                   </Menu.Item>,
-                    <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='list'>List
-                      Contacts</Menu.Item>]
+                    <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='list'>
+                      <font style={menuNavText}>All Locations</font>
+                    </Menu.Item>]
               ) : ''}
               {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
                   <Menu.Item as={NavLink} activeClassName="active" exact to="/admin" key='admin'>Admin</Menu.Item>
@@ -32,12 +35,16 @@ class NavBar extends React.Component {
                     <Button basic inverted pointing="top right" content="Sign-In" as={NavLink} exact to="/signin">
                     </Button>
                 ) : (
-                    <Dropdown text={this.props.currentUser} pointing="top right" icon={'user'}>
-                      <Dropdown.Menu>
-                        <Dropdown.Item icon="edit" text="Edit Profile" as={NavLink} exact to="/profile"/>
-                        <Dropdown.Item icon="sign out" text="Sign Out" as={NavLink} exact to="/signout"/>
-                      </Dropdown.Menu>
-                    </Dropdown>
+                      <Button basic inverted>
+                        <div style={userNavText}>
+                        <Dropdown text={this.props.currentUser} pointing="top right" icon={'user'}>
+                          <Dropdown.Menu>
+                            <Dropdown.Item icon="edit" text="Edit Profile" as={NavLink} exact to="/profile"/>
+                            <Dropdown.Item icon="sign out" text="Sign Out" as={NavLink} exact to="/signout"/>
+                          </Dropdown.Menu>
+                        </Dropdown>
+                        </div>
+                      </Button>
                 )}
               </Menu.Item>
             </Container>

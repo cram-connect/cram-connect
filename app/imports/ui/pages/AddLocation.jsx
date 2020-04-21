@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Grid, Segment, Header } from 'semantic-ui-react';
+import { Grid, Header, Segment } from 'semantic-ui-react';
 import { AutoForm, ErrorsField, SubmitField, TextField } from 'uniforms-semantic';
 import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
@@ -19,7 +19,7 @@ const formSchema = new SimpleSchema({
 });
 
 /** Renders the Page for adding a document. */
-class AddContact extends React.Component {
+class AddLocation extends React.Component {
 
   /** On submit, insert the data. */
   submit(data, formRef) {
@@ -38,26 +38,30 @@ class AddContact extends React.Component {
 
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   render() {
+    const addLocHeader = { paddingTop: '15px', color: 'white', fontSize: '36px', fontFamily: 'Oswald',
+      marginBottom: '15px' };
     let fRef = null;
     return (
         <Grid container centered>
-          <Grid.Column>
-            <Header as="h2" textAlign="center">Add Contact</Header>
-            <AutoForm ref={ref => { fRef = ref; }} schema={formSchema} onSubmit={data => this.submit(data, fRef)} >
-              <Segment>
-                <TextField name='firstName'/>
-                <TextField name='lastName'/>
-                <TextField name='address'/>
-                <TextField name='image'/>
-                <LongTextField name='description'/>
-                <SubmitField value='Submit'/>
-                <ErrorsField/>
-              </Segment>
-            </AutoForm>
-          </Grid.Column>
+            <Grid.Column>
+              <div style={addLocHeader}>
+                <Header as="h2" textAlign="center"> <font style={addLocHeader}>Add a New Location</font> </Header>
+              </div>
+              <AutoForm ref={ref => { fRef = ref; }} schema={formSchema} onSubmit={data => this.submit(data, fRef)} >
+                <Segment>
+                  <TextField name='firstName'/>
+                  <TextField name='lastName'/>
+                  <TextField name='address'/>
+                  <TextField name='image'/>
+                  <LongTextField name='description'/>
+                  <SubmitField value='Submit'/>
+                  <ErrorsField/>
+                </Segment>
+              </AutoForm>
+            </Grid.Column>
         </Grid>
     );
   }
 }
 
-export default AddContact;
+export default AddLocation;
