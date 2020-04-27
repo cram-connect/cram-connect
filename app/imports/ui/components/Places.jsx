@@ -1,8 +1,7 @@
 import React from 'react';
-import { Card, Image, Feed, Button } from 'semantic-ui-react';
+import { Card, Image, Feed, Button, Rating } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { withRouter, Link } from 'react-router-dom';
-import Note from './Notes';
+import { withRouter } from 'react-router-dom';
 import AddNote from './AddNote';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
@@ -15,31 +14,18 @@ class Place extends React.Component {
   render() {
     return (
         <Card centered>
+          <Image src={this.props.place.image} wrapped ui={false} />
           <Card.Content>
-            <Image
-                floated='right'
-                size='big'
-                src={this.props.place.image}
-            />
             <Card.Header>{this.props.place.name}</Card.Header>
-            <Card.Meta>{this.props.place.rating}</Card.Meta>
+            <Card.Meta>
+              <Rating icon='star' defaultRating={this.props.place.rating} maxRating={4} />
+            </Card.Meta>
             <Card.Description>
               {this.props.place.description}
             </Card.Description>
           </Card.Content>
           <Card.Content extra>
-            <Link to={`/edit/${this.props.place._id}`}>Edit</Link>
-          </Card.Content>
-          <Card.Content extra>
-            <Feed>
-              {this.props.notes.map((note, index) => <Note key={index} note={note}/>)}
-            </Feed>
-          </Card.Content>
-          <Card.Content extra>
-            <AddNote owner={this.props.place.owner} contactId={this.props.place._id}/>
-          </Card.Content>
-          <Card.Content extra>
-            <Button onClick={() => { this.removeItem(this.props.place._id); }}>Delete</Button>
+            <AddNote owner={this.props.place.owner} placeId={this.props.place._id}/>
           </Card.Content>
         </Card>
     );
@@ -49,7 +35,6 @@ class Place extends React.Component {
 /** Require a document to be passed to this component. */
 Place.propTypes = {
   place: PropTypes.object.isRequired,
-  notes: PropTypes.array.isRequired,
   Places: PropTypes.object.isRequired,
 };
 

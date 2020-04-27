@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
 import { Contacts } from '../../api/contact/Contacts';
 import { Notes } from '../../api/note/Notes';
+import { Places } from '../../api/place/Places';
 
 /** This subscription publishes only the documents associated with the logged in user */
 Meteor.publish('Contacts', function publish() {
@@ -25,6 +26,15 @@ Meteor.publish('Notes', function publish() {
   if (this.userId) {
     const username = Meteor.users.findOne(this.userId).username;
     return Notes.find({ owner: username });
+  }
+  return this.ready();
+});
+
+/** This subscription publishes only the documents associated with the logged in user */
+Meteor.publish('Places', function publish() {
+  if (this.userId) {
+    const username = Meteor.users.findOne(this.userId).username;
+    return Places.find({ owner: username });
   }
   return this.ready();
 });

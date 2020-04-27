@@ -9,7 +9,7 @@ const Places = new Mongo.Collection('Places');
 const PlaceSchema = new SimpleSchema({
   image: String,
   name: String,
-  rating: Number,
+  rating: String,
   description: String,
   owner: String,
 }, { tracker: Tracker });

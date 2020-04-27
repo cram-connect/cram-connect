@@ -18,7 +18,7 @@ class NavBar extends React.Component {
                 <Header inverted as='h1'>Cram Connect</Header>
               </Menu.Item>
               {this.props.currentUser ? (
-                  [<Menu.Item as={NavLink} activeClassName="active" exact to="/search" key='search' inverted>Search
+                  [<Menu.Item as={NavLink} activeClassName="active" exact to="/search" key='search' >Search
                   </Menu.Item>,
                     <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='list'>Favorites</Menu.Item>,
                     <Menu.Item as={NavLink} activeClassName="active" exact to="/discover" key='discover'>Discover
@@ -29,7 +29,7 @@ class NavBar extends React.Component {
               ) : ''}
               <Menu.Item position="right">
                 {this.props.currentUser === '' ? (
-                    <Button positive pointing="top right" icon={'large user'} as={NavLink} exact to="/signin">
+                    <Button positive pointing="top right" icon={'user'} as={NavLink} exact to="/signin">
                     </Button>
                 ) : (
                     <Dropdown text={this.props.currentUser} pointing="top right" icon={'user'}>
