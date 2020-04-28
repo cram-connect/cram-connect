@@ -79,7 +79,7 @@ class SearchPage extends React.Component {
               <List.Item> <Checkbox label='Quiet' /></List.Item>
             </List>
           </Grid.Column>
-          <Grid.Column width={8}>
+          <Grid.Column width={7}>
             <Search
                 fluid
                 loading={isLoading}

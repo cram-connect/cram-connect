@@ -33,8 +33,5 @@ Meteor.publish('Notes', function publish() {
 /** Locations */
 /** This subscription publishes only the documents associated with the logged in user */
 Meteor.publish('Locations', function publish() {
-  if (this.userId) {
     return Locations.find();
-  }
-  return this.ready();
 });

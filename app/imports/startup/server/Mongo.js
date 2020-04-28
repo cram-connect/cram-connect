@@ -20,7 +20,7 @@ if (Contacts.find().count() === 0) {
 
 /** Initialize the database with a default data document. */
 function addLocation(data) {
-  console.log(`  Adding: ${data.locationName} (${data.owner})`);
+  console.log(`  Adding: ${data.locationName} `);
   Locations.insert(data);
 }
 
