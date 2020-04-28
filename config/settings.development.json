@@ -30,11 +30,13 @@
       "lastName": "Istrator",
       "email": "admin@foo.com",
       "major": "Chemistry",
-      "preferences": [
+      "qualities": [
         "Noisy",
         "Can Eat"
       ],
-      "favorite": "Hamilton Library",
+      "favorites": [
+        "Hamilton Library"
+      ],
       "image": "https://marionne.github.io/images/marionnesphoto.jpg"
     },
     {
@@ -42,11 +44,13 @@
       "lastName": "Kanpo",
       "email": "john@foo.com",
       "major": "Liberal Arts",
-      "preferences": [
+      "qualities": [
         "Noisy",
         "No Food"
       ],
-      "favorite": "Sinclair Library",
+      "favorites": [
+        "Sinclair Library"
+      ],
       "image": "https://saharama.github.io/images/msahara.jpg"
     },
     {
@@ -54,11 +58,13 @@
       "lastName": "Saha",
       "email": "saharama@hawaii.edu",
       "major": "Computer Science",
-      "preferences": [
+      "qualities": [
         "Quiet",
         "Cold"
       ],
-      "favorite": "Hamilton Library",
+      "favorites": [
+        "Hamilton Library"
+      ],
       "image": "https://philipmjohnson.github.io/images/philip2.jpeg"
     }
   ],
@@ -86,7 +92,54 @@
       "time": "Monday: 5am - 11pm",
       "description": "Quiet library with air conditioning.",
       "image": "https://manoa.hawaii.edu/library/wp-content/uploads/2017/10/Sunny-Alcove.jpg"
+    },
+    {
+      "locationName": "Music Department",
+      "qualities": [
+        "Noisy",
+        "Messy",
+        "Stinky"
+      ],
+      "rating": "1",
+      "time": "Tuesday: 7am - 10pm",
+      "description": "Open and active study space in courtyard.",
+      "image": "https://historichawaii.org/wp-content/uploads/2014/02/Oahu_Honolulu_DoleStreet_2411_photo_byIanClagstone.jpg"
+    },
+    {
+      "locationName": "Paradise Palms",
+      "qualities": [
+        "Cold",
+        "Dirty",
+        "Food"
+      ],
+      "rating": "4",
+      "time": "Wednesday: 9am - 5pm",
+      "description": "Very busy environment with a food source.",
+      "image": "https://www.hawaii.edu/news/wp-content/uploads/2017/10/manoa-dunkin-donuts.jpg"
+    },
+    {
+      "locationName": "Hale Aloha Dorms",
+      "qualities": [
+        "Restricted",
+        "Dirty",
+        "Spacious"
+      ],
+      "rating": "2",
+      "time": "Sunday: 7pm - 1am",
+      "description": "Spacious study space that never sleeps.",
+      "image": "https://manoa.hawaii.edu/housing/sites/manoa.hawaii.edu.housing/files/pictures/backgrounds/ha-sm.jpg"
+    },
+    {
+      "locationName": "Gateway House Dorms",
+      "qualities": [
+        "Restricted",
+        "Clean",
+        "Hot"
+      ],
+      "rating": "3",
+      "time": "Friday: 3pm - 9pm",
+      "description": "Study rooms for student housing residents with a nice breeze.",
+      "image": "https://manoa.hawaii.edu/housing/sites/manoa.hawaii.edu.housing/files/pictures/backgrounds/gh_temp_2.jpg"
     }
-
   ]
 }
