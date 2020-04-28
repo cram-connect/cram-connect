@@ -3,8 +3,8 @@ import { Meteor } from 'meteor/meteor';
 import { Grid, Card, Loader, Button, Checkbox, List, Dropdown, Menu } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
-import Place from '../components/Places';
-import { Places } from '../../api/place/Places';
+import Location from '../components/Locations';
+import { Locations } from '../../api/location/Locations';
 
 /** Capacity amount for each place */
 const options = [
@@ -20,7 +20,6 @@ const options = [
   { key: 10, text: '10', value: 10 },
 ];
 
-
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class Search extends React.Component {
 
@@ -31,6 +30,7 @@ class Search extends React.Component {
 
   /** Render the page once subscriptions have been received. */
   renderPage() {
+
     return (
         <Grid centered>
           <Grid.Column width={3}>
@@ -50,7 +50,8 @@ class Search extends React.Component {
           </Grid.Column>
           <Grid.Column width={8}>
             <Card.Group>
-              {this.props.places.map((place, index) => <Place key={index} place={place} Places={Places}/>)}
+              {this.props.locations.map((location, index) => <Location key={index}
+                                                                       location={location} Locations={Locations}/>)}
             </Card.Group>
           </Grid.Column>
         </Grid>
@@ -60,16 +61,16 @@ class Search extends React.Component {
 
 /** Require an array of Stuff documents in the props. */
 Search.propTypes = {
-  places: PropTypes.array.isRequired,
+  locations: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
   // Get access to Stuff documents.
-  const subscription = Meteor.subscribe('Places');
+  const subscription = Meteor.subscribe('Locations');
   return {
-    places: Places.find({}).fetch(),
+    locations: Locations.find({}).fetch(),
     ready: subscription.ready(),
   };
 })(Search);

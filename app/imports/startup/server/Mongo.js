@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { Contacts } from '../../api/contact/Contacts';
-import { Places } from '../../api/place/Places';
+import { Locations } from '../../api/location/Locations';
 
 /* eslint-disable no-console */
 
@@ -19,15 +19,15 @@ if (Contacts.find().count() === 0) {
 }
 
 /** Initialize the database with a default data document. */
-function addPlace(data) {
-  console.log(`  Adding: ${data.name} (${data.owner})`);
-  Places.insert(data);
+function addLocation(data) {
+  console.log(`  Adding: ${data.locationName} (${data.owner})`);
+  Locations.insert(data);
 }
 
 /** Initialize the collection if empty. */
-if (Places.find().count() === 0) {
-  if (Meteor.settings.defaultPlaces) {
-    console.log('Creating default places.');
-    Meteor.settings.defaultPlaces.map(data => addPlace(data));
+if (Locations.find().count() === 0) {
+  if (Meteor.settings.defaultLocations) {
+    console.log('Creating default locations.');
+    Meteor.settings.defaultLocations.map(data => addLocation(data));
   }
 }
