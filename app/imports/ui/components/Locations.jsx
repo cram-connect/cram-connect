@@ -16,12 +16,15 @@ class Location extends React.Component {
         <Card centered>
           <Image src={this.props.location.image} wrapped ui={false} />
           <Card.Content>
-            <Card.Header>{this.props.location.name}</Card.Header>
+            <Card.Header>{this.props.location.locationName}</Card.Header>
             <Card.Meta>
               <Rating icon='star' defaultRating={this.props.location.rating} maxRating={4} />
             </Card.Meta>
             <Card.Meta>
               {this.props.location.qualities}
+            </Card.Meta>
+            <Card.Meta>
+              {this.props.location.time}
             </Card.Meta>
             <Card.Description>
               {this.props.location.description}
