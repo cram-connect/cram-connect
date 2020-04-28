@@ -55,7 +55,6 @@
       "rating": 5,
       "time": "Monday 5am to 11pm",
       "description": "Library near Sinclair circle.",
-      "owner": "john@foo.com",
       "image": "https://i.pinimg.com/originals/5e/b9/25/5eb9251699c57918a061adb36e44a3cc.jpg"
     },
     {
@@ -68,7 +67,6 @@
       "rating": 3,
       "time": "Monday: 5am - 11pm",
       "description": "Quiet library with air conditioning.",
-      "owner": "john@foo.com",
       "image": "https://manoa.hawaii.edu/library/wp-content/uploads/2017/10/Sunny-Alcove.jpg"
     }
   ]

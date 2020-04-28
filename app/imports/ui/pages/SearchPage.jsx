@@ -1,6 +1,7 @@
 import React from 'react';
+import _ from 'lodash';
 import { Meteor } from 'meteor/meteor';
-import { Grid, Card, Loader, Button, Checkbox, List, Dropdown, Menu } from 'semantic-ui-react';
+import { Grid, Card, Loader, Button, Checkbox, List, Dropdown, Menu, Search } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import Location from '../components/Locations';
@@ -20,8 +21,37 @@ const options = [
   { key: 10, text: '10', value: 10 },
 ];
 
+/** Location items */
+const source = _.times(5, () => ({
+  title: Locations.locationName,
+  description: Locations.description,
+  image: Locations.image,
+  rating: Locations.ratings,
+}));
+
+const initialState = { isLoading: false, results: [], value: '' };
+
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
-class Search extends React.Component {
+class SearchPage extends React.Component {
+  state = initialState;
+
+  handleResultSelect = (e, { result }) => this.setState({ value: result.title })
+
+  handleSearchChange = (e, { value }) => {
+    this.setState({ isLoading: true, value });
+
+    setTimeout(() => {
+      if (this.state.value.length < 1) return this.setState(initialState);
+
+      const re = new RegExp(_.escapeRegExp(this.state.value), 'i');
+      const isMatch = (result) => re.test(result.title);
+
+      this.setState({
+        isLoading: false,
+        results: _.filter(source, isMatch),
+      });
+    }, 300);
+  }
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {
@@ -30,6 +60,7 @@ class Search extends React.Component {
 
   /** Render the page once subscriptions have been received. */
   renderPage() {
+    const { isLoading, value, results } = this.state;
 
     return (
         <Grid centered>
@@ -49,6 +80,17 @@ class Search extends React.Component {
             </List>
           </Grid.Column>
           <Grid.Column width={8}>
+            <Search
+                fluid
+                loading={isLoading}
+                onResultSelect={this.handleResultSelect}
+                onSearchChange={_.debounce(this.handleSearchChange, 500, {
+                  leading: true,
+                })}
+                results={results}
+                value={value}
+                {...this.props}
+            />
             <Card.Group>
               {this.props.locations.map((location, index) => <Location key={index}
                                                                        location={location} Locations={Locations}/>)}
@@ -60,7 +102,7 @@ class Search extends React.Component {
 }
 
 /** Require an array of Stuff documents in the props. */
-Search.propTypes = {
+SearchPage.propTypes = {
   locations: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
@@ -73,4 +115,4 @@ export default withTracker(() => {
     locations: Locations.find({}).fetch(),
     ready: subscription.ready(),
   };
-})(Search);
+})(SearchPage);
