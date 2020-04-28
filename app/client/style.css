@@ -17,3 +17,12 @@ h2.ui.inverted.header{
   background-color: transparent;
   padding-bottom: 1px;
 }
+
+.ui.form .fields .field .ui.input input, .ui.form .field .ui.input input {
+  width: auto;
+  background-color: #b0eab4;;
+}
+
+div.registerNow {
+  margin-top: 7px;
+}
