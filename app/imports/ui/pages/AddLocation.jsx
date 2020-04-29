@@ -6,16 +6,15 @@ import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
 import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
 import SimpleSchema from 'simpl-schema';
-import { Contacts } from '/imports/api/contact/Contacts';
-import LongTextField from 'uniforms-semantic/LongTextField';
+import { Locations } from '../../api/location/Locations';
 
 /** Create a schema to specify the structure of the data to appear in the form. */
 const formSchema = new SimpleSchema({
-  firstName: String,
-  lastName: String,
-  address: String,
-  image: String,
+  locationName: String,
+  rating: Number,
+  time: String,
   description: String,
+  image: String,
 });
 
 /** Renders the Page for adding a document. */
@@ -23,14 +22,14 @@ class AddLocation extends React.Component {
 
   /** On submit, insert the data. */
   submit(data, formRef) {
-    const { firstName, lastName, address, image, description } = data;
+    const { locationName, rating, time, description, image } = data;
     const owner = Meteor.user().username;
-    Contacts.insert({ firstName, lastName, address, image, description, owner },
+    Locations.insert({ locationName, rating, time, description, image, owner },
         (error) => {
           if (error) {
             swal('Error', error.message, 'error');
           } else {
-            swal('Success', 'Item added successfully', 'success');
+            swal('Success', 'Location added successfully', 'success');
             formRef.reset();
           }
         });
@@ -49,11 +48,11 @@ class AddLocation extends React.Component {
               </div>
               <AutoForm ref={ref => { fRef = ref; }} schema={formSchema} onSubmit={data => this.submit(data, fRef)} >
                 <Segment>
-                  <TextField name='firstName'/>
-                  <TextField name='lastName'/>
-                  <TextField name='address'/>
+                  <TextField name='locationName'/>
+                  <TextField name='rating'/>
                   <TextField name='image'/>
-                  <LongTextField name='description'/>
+                  <TextField name='description'/>
+                  <TextField name='time'/>
                   <SubmitField value='Submit'/>
                   <ErrorsField/>
                 </Segment>

@@ -10,8 +10,8 @@ import { Roles } from 'meteor/alanning:roles';
 class NavBar extends React.Component {
   render() {
     const menuStyle = { marginBottom: '2px', color: 'white' };
-    const menuNavText = { color: '#d7ffc4fa', fontSize: '22px', fontFamily: 'Oswald'};
-    const userNavText = { color: '#d7ffc4fa', fontSize: '18px', fontFamily: 'Oswald'};
+    const menuNavText = { color: '#d7ffc4fa', fontSize: '22px', fontFamily: 'Oswald' };
+    const userNavText = { color: '#d7ffc4fa', fontSize: '18px', fontFamily: 'Oswald' };
     return (
         <div className="ui center aligned container">
           <Menu style={menuStyle} attached="top" borderless inverted>
@@ -23,14 +23,9 @@ class NavBar extends React.Component {
 
                   [<Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add' inverted='true'>
                     <font style={menuNavText}>Add a Spot</font>
-
-                  // eslint-disable-next-line max-len
-                  [<Menu.Item as={NavLink} activeClassName="active" exact to="/location" key='add' inverted='true'>
-                    <font style={menuNavText}>Random Location</font>
-
                   </Menu.Item>,
-                    <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='list'>
-                      <font style={menuNavText}>All Locations</font>
+                    <Menu.Item as={NavLink} activeClassName="active" exact to="/location" key='list'>
+                      <font style={menuNavText}>Random Location</font>
                     </Menu.Item>]
               ) : ''}
               {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
