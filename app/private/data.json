@@ -1,0 +1,306 @@
+{
+  "locations": [
+    {
+      "locationName": "Paradise Palms",
+      "qualities": [
+        "Cold",
+        "Dirty",
+        "Food"
+      ],
+      "rating": "4",
+      "time": "Wednesday: 9am - 5pm",
+      "description": "Very busy environment with a food source.",
+      "image": "https://www.hawaii.edu/news/wp-content/uploads/2017/10/manoa-dunkin-donuts.jpg"
+    },
+    {
+      "locationName": "Hale Aloha Dorms",
+      "qualities": [
+        "Restricted",
+        "Dirty",
+        "Spacious"
+      ],
+      "rating": "2",
+      "time": "Sunday: 7pm - 1am",
+      "description": "Spacious study space that never sleeps.",
+      "image": "https://manoa.hawaii.edu/housing/sites/manoa.hawaii.edu.housing/files/pictures/backgrounds/ha-sm.jpg"
+    },
+    {
+      "locationName": "Gateway House Dorms",
+      "qualities": [
+        "Restricted",
+        "Clean",
+        "Hot"
+      ],
+      "rating": "3",
+      "time": "Friday: 3pm - 9pm",
+      "description": "Study rooms for student housing residents with a nice breeze.",
+      "image": "https://manoa.hawaii.edu/housing/sites/manoa.hawaii.edu.housing/files/pictures/backgrounds/gh_temp_2.jpg"
+    },
+    {
+      "locationName": "Holmes Hall",
+      "qualities": [
+        "Old",
+        "Dirty",
+        "Creepy"
+      ],
+      "rating": 2,
+      "time": "Thursday: 1am - 4am",
+      "description": "What is lurking in the shadows? Ghosts or future engineers?",
+      "image": "https://media-exp1.licdn.com/dms/image/C561BAQHe1w8w3XPLpw/company-background_10000/0?e=2159024400&v=beta&t=9cUQCuBlHwPHXaeAgwKk0zaoJeIDSVyAKOe1SuwcHNw"
+    },
+    {
+      "locationName": "POST Building",
+      "qualities": [
+        "Clean",
+        "Cold",
+        "Vending Machine"
+      ],
+      "rating": 4,
+      "time": "Wednesday: 8am - 11pm",
+      "description": "Very productive space, if you don’t freeze to death first.",
+      "image": "https://www.staradvertiser.com/wp-content/uploads/2017/01/web1_CTY-UH-Explosion-Report-084.jpg"
+    },
+    {
+      "locationName": "Shaka Shaka Tea Express",
+      "qualities": [
+        "Social",
+        "Boba",
+        "Off Campus"
+      ],
+      "rating": 5,
+      "time": "Friday: 4pm - 8pm",
+      "description": "Boba, study, and chill. nuff said.",
+      "image": "https://media-cdn.tripadvisor.com/media/photo-s/08/a9/89/fd/shaka-shaka-tea-express.jpg"
+    },
+    {
+      "locationName": "Ba-Le Sandwich Shop",
+      "qualities": [
+        "Social",
+        "Cold",
+        "Alcohol"
+      ],
+      "rating": 4,
+      "time": "Friday: 6pm - 9pm",
+      "description": "Great place to have a meal, study for a test, or just drink.",
+      "image": "https://s3-media0.fl.yelpcdn.com/bphoto/Xtzgq8WqKR9O_xaXIduP6w/l.jpg"
+    },
+    {
+      "locationName": "Queen Liliuokalani Center For Student Services",
+      "qualities": [
+        "Open Air",
+        "Social",
+        "Alcohol"
+      ],
+      "rating": 4,
+      "time": "Tuesday: 5pm -10pm",
+      "description": "Very limited and isolated tables scattered throughout the facility.",
+      "image": "https://hawaii.edu/kuaana/wp-content/uploads/2014/03/University-of-Hawaii-Manoa-33C6F438.jpg"
+    },
+    {
+      "locationName": "Frear Hall",
+      "qualities": [
+        "Moldy",
+        "Cold",
+        "Quiet"
+      ],
+      "rating": 1,
+      "time": "Saturday: 5pm - 8am",
+      "description": "Rich kids, cold AC, and mold. Can’t get better than this.",
+      "image": "https://manoa.hawaii.edu/housing/sites/manoa.hawaii.edu.housing/files/pictures/backgrounds/fh_temp.jpg"
+    },
+    {
+      "locationName": "Hawaii Institute of Geophysics",
+      "qualities": [
+        "Open Air",
+        "Mosquitoes",
+        "Noisy"
+      ],
+      "rating": 2,
+      "time": "Monday: 1pm - 8pm",
+      "description": "Comfortable study spot, but relaxing as people pass by.",
+      "image": "https://www.bestructural.com/wp-content/uploads/2015/03/Geophysics-570x570_c.jpg"
+    },
+    {
+      "locationName": "Sakamaki Hall",
+      "qualities": [
+        "Open Air",
+        "Mosquitoes",
+        "Noisy"
+      ],
+      "rating": 4,
+      "time": "Tuesday: 6pm - 8pm",
+      "description": "Peaceful environment surrounded with bamboo. You won’t find any outlets here.",
+      "image": "https://www.hawaii.edu/religion/wp-content/uploads/2015/09/sakamaki.jpg"
+    },
+    {
+      "locationName": "Campus Center Food Court",
+      "qualities": [
+        "Noisy",
+        "Food",
+        "Social"
+      ],
+      "rating": 3,
+      "time": "Friday: 1pm - 4pm",
+      "description": "Bustling food court with many other half-conscious students.",
+      "image": "https://bloximages.newyork1.vip.townnews.com/manoanow.org/content/tncms/assets/v3/editorial/9/59/9591d620-48b1-11e6-ac0e-97b8953acd38/5785c2aa9b74e.image.png?resize=943%2C630"
+    },
+    {
+      "locationName": "Architecture Building",
+      "qualities": [
+        "Food",
+        "Open Air",
+        "Spacious"
+      ],
+      "rating": 5,
+      "time": "Wednesday: 5pm - 6pm",
+      "description": "Great place for inspiration in the midst of study.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTsz0u9l4qf3Ox3Q1msxcQwfBxiDWTUjHSBmQYskglEPhbg6Bzq&usqp=CAU"
+    },
+    {
+      "locationName": "Art Building",
+      "qualities": [
+        "Open Air"
+      ],
+      "rating": 2,
+      "time": "Tuesday: 7am - 12pm",
+      "description": "Has a huge auditorium for classes. Sometimes empty for studying.",
+      "image": "https://manoa.hawaii.edu/landscaping/images/elements/baobab480.png"
+    },
+    {
+      "locationName": "East-West Center",
+      "qualities": [
+        "Peaceful"
+      ],
+      "rating": 2,
+      "time": "Tuesday: 8 am - 4 pm",
+      "description": "Can’t study here unless you have access to the building.",
+      "image": "https://www.eastwestcenter.org/sites/default/files/filemanager/images/menu_social/ewc_garden_2015.jpg"
+    },
+    {
+      "locationName": "Korean Studies Center",
+      "qualities": [
+        "Peaceful"
+      ],
+      "rating": 4,
+      "time": "All day",
+      "description": "Simulates a traditional Korean building. Study like the ancients did!",
+      "image": "https://manoa.hawaii.edu/wp/wp-content/uploads/2017/09/korean-studies-bldg-1024x597.jpg"
+    },
+    {
+      "locationName": "Starbucks (On-campus)",
+      "qualities": [
+        "Noisy"
+      ],
+      "rating": 4,
+      "time": "All day",
+      "description": "Seating outside to study while taking a coffee break.",
+      "image": "https://i.ytimg.com/vi/d75XNDMqsJQ/maxresdefault.jpg"
+    },
+    {
+      "locationName": "Starbucks (Off-campus)",
+      "qualities": [
+        "Off-campus"
+      ],
+      "rating": 3,
+      "time": "Tuesday: 7 am - 5 pm",
+      "description": "Further from campus, but a nice location with less people.",
+      "image": "https://s3-media0.fl.yelpcdn.com/bphoto/E_gSbwSqnA3p9F72zTOASQ/o.jpg"
+    },
+    {
+      "locationName": "Glazer's Coffee",
+      "qualities": [
+        "Off-campus"
+      ],
+      "rating": 1,
+      "time": "Wednesday: 8 am - 4 pm",
+      "description": "No place to study, but great coffee.",
+      "image": "https://cdn.cybergolf.com/images/730/1614111_height370_width560.jpg"
+    },
+    {
+      "locationName": "The Bean Counter",
+      "qualities": [
+        "Small"
+      ],
+      "rating": 4,
+      "time": "Thursday: 2 am - 8 pm",
+      "description": "Great coffee, lot’s of outlets.",
+      "image": "https://s3-media0.fl.yelpcdn.com/bphoto/6u_dwgLVGP68_l3M5lq5fg/o.jpg"
+    },
+    {
+      "locationName": "Burger King",
+      "qualities": [
+        "Off-campus",
+        "Food",
+        "Noisy"
+      ],
+      "rating": 2,
+      "time": "1pm - 5pm",
+      "description": "Sub-par quality food and noisy location, making it hard to study.",
+      "image": "https://s3-media0.fl.yelpcdn.com/bphoto/4JMBMgt3tfeYMoFGGEi_1A/o.jpg"
+    },
+    {
+      "locationName": "Hale Mahana",
+      "qualities": [
+        "On-campus"
+      ],
+      "rating": 4,
+      "time": "Sunday: 8am - 12pm",
+      "description": "It’s a dorm. Get ready to party.",
+      "image": "https://images1.apartments.com/i2/ZdFRj-4hKKebltJ4DI7uzW9ltpq3oi7XBZhTd6euSZY/111/hale-mahana-apartments-honolulu-hi-main-lobby.jpg"
+    },
+    {
+      "locationName": "Pieology",
+      "qualities": [
+        "Food"
+      ],
+      "rating": 4,
+      "time": "All day",
+      "description": "Great pizzas for low prices.",
+      "image": "https://s3-media0.fl.yelpcdn.com/bphoto/letrdK2bxGNrQLKuU9ctTQ/o.jpg"
+    },
+    {
+      "locationName": "Bilger Hall",
+      "qualities": [
+        "Quiet"
+      ],
+      "rating": 3,
+      "time": "All day",
+      "description": "Lot’s of classes here.",
+      "image": "https://s3-media0.fl.yelpcdn.com/bphoto/mRgwQLiZ8YiVMecvz4VM1w/o.jpg"
+    },
+    {
+      "locationName": "Law Library",
+      "qualities": [
+        "Quiet"
+      ],
+      "rating": 4,
+      "time": "All day",
+      "description": "Plenty of resources to draw from for your assignments.",
+      "image": "https://bloximages.newyork1.vip.townnews.com/manoanow.org/content/tncms/assets/v3/editorial/b/8f/b8f95eba-af1c-11e9-9735-db59edd847fe/5d3a150fc240f.image.jpg"
+    },
+    {
+      "locationName": "Johnson Hall",
+      "qualities": [
+        "Noisy",
+        "Smelly",
+        "Social"
+      ],
+      "rating": 3,
+      "time": "Sunday: 8am - 12pm",
+      "description": "Another dorm. Better than some, not the worst.",
+      "image": "https://bloximages.newyork1.vip.townnews.com/manoanow.org/content/tncms/assets/v3/editorial/b/03/b03a660e-6307-11e4-b4b0-001a4bcf6878/5456f37329a54.image.jpg"
+    },
+    {
+      "locationName": "Banan",
+      "qualities": [
+        "Food",
+        "Cold",
+        "Off-campus"
+      ],
+      "rating": 5,
+      "time": "Saturday: 10am - 1:30pm",
+      "description": "A nice place to cool off and eat banana-based ice cream while you study",
+      "image": "https://s3-media0.fl.yelpcdn.com/bphoto/OAuKFTIOFZ-peL70WjJVew/o.jpg"
+    }
+  ]
+}
