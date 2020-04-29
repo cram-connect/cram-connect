@@ -8,8 +8,28 @@
   padding-bottom: 1px;
 }
 
-h2.ui.inverted.header{
+h2.ui.inverted.header {
   font-size: 54px;
+}
+
+h3.ui.inverted.header {
+  font-size: 25px;
+  font-family: 'Lexend Deca', sans-serif;
+}
+
+#locationPage.ui.fluid.image {
+  height: 400px;
+  overflow: hidden;
+}
+
+#tags {
+  padding-top: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#stars {
+  margin-right: 20px;
 }
 
 .ui.icon.button {
