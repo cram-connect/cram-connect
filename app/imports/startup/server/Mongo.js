@@ -5,7 +5,7 @@ import { ProfilesLocations } from '../../api/profile/ProfileLocations';
 import { ProfilesQualities } from '../../api/profile/ProfileQualities';
 import { Qualities } from '../../api/profile/Qualities';
 import { Locations } from '../../api/location/Locations';
-import { LocationsQualities } from '../../api/location/LocationQualities';
+import { LocationsQualities } from '../../api/location/LocationsQualities';
 
 /* eslint-disable no-console */
 
