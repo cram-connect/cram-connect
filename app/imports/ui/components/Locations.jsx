@@ -21,9 +21,6 @@ class Location extends React.Component {
               <Rating icon='star' defaultRating={this.props.location.rating} maxRating={4} />
             </Card.Meta>
             <Card.Meta>
-              {this.props.location.qualities}
-            </Card.Meta>
-            <Card.Meta>
               {this.props.location.time}
             </Card.Meta>
             <Card.Description>

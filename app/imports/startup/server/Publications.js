@@ -7,6 +7,7 @@ import { ProfilesLocations, profilesLocationsName } from '../../api/profile/Prof
 import { ProfilesQualities, profilesQualitiesName } from '../../api/profile/ProfileQualities';
 import { Qualities, qualitiesName } from '../../api/profile/Qualities';
 import { Locations, locationsName } from '../../api/location/Locations';
+import { LocationsQualities, locationsQualitiesName } from '../../api/location/LocationsQualities';
 
 /** This subscription publishes only the documents associated with the logged in user */
 Meteor.publish('Contacts', function publish() {
@@ -57,6 +58,5 @@ Meteor.publish(qualitiesName, () => Qualities.find());
 /** Define a publication to publish all projects. */
 Meteor.publish(locationsName, () => Locations.find());
 
-/** Define a publication to publish this collection. Currently not used.
- Meteor.publish(locationQualitiesName, () => LocationsQualities.find());
- */
+/** Define a publication to publish this collection. Currently not used. */
+ Meteor.publish(locationsQualitiesName, () => LocationsQualities.find());

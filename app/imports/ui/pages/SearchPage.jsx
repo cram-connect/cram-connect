@@ -6,6 +6,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import Location from '../components/Locations';
 import { Locations } from '../../api/location/Locations';
+import { LocationsQualities } from '../../api/location/LocationsQualities';
 
 /** Capacity amount for each place */
 const options = [
@@ -22,7 +23,7 @@ const options = [
 ];
 
 /** Location items */
-const source = _.times(5, () => ({
+const source = _.times(6, () => ({
   title: Locations.locationName,
   description: Locations.description,
   image: Locations.image,
@@ -61,6 +62,9 @@ class SearchPage extends React.Component {
   /** Render the page once subscriptions have been received. */
   renderPage() {
     const { isLoading, value, results } = this.state;
+
+    const allLocations = Locations.find().fetch();
+    console.log(allLocations);
 
     return (
         <Grid centered>
@@ -109,10 +113,11 @@ SearchPage.propTypes = {
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
-  // Get access to Stuff documents.
+  // Get access to subscriptions.
   const subscription = Meteor.subscribe('Locations');
+  const subscription2 = Meteor.subscribe('LocationQualities');
   return {
     locations: Locations.find({}).fetch(),
-    ready: subscription.ready(),
+    ready: subscription.ready() && subscription2.ready(),
   };
 })(SearchPage);
