@@ -33,13 +33,12 @@ const updateProfileMethod = 'Profiles.update';
  */
 Meteor.methods({
   'Profiles.update'({ email, firstName, lastName, major, image, qualities, locations }) {
-    Profiles.update({ email }, { $set: { email, firstName, lastName, major, image, } });
+    Profiles.update({ email }, { $set: { email, firstName, lastName, major, image } });
     ProfilesQualities.remove({ profile: email });
     ProfilesLocations.remove({ profile: email });
     qualities.map((quality) => ProfilesQualities.insert({ profile: email, quality }));
     locations.map((location) => ProfilesLocations.insert({ profile: email, location }));
   },
 });
-
 
 export { updateProfileMethod };

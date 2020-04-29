@@ -22,7 +22,7 @@ const makeSchema = (allQualities, allLocations) => new SimpleSchema({
   lastName: { type: String, label: 'Last', optional: true },
   major: { type: String, label: 'Major', optional: true },
   image: { type: String, label: 'Picture URL', optional: true },
-  qualities: { type: Array, label: 'Qualities', optional: true },
+  qualities: { type: Array, label: 'Favorite Spot Qualities', optional: true },
   'qualities.$': { type: String, allowedValues: allQualities },
   locations: { type: Array, label: 'Favorite Cram Spots', optional: true },
   'locations.$': { type: String, allowedValues: allLocations },
