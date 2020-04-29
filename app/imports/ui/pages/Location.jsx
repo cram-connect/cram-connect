@@ -24,6 +24,7 @@ class Location extends React.Component {
     const email = Meteor.user().username;
     const location = _.sample(Locations.find().fetch());
     const number = location.rating;
+    console.log(location.rating);
     const locationQuality = _.pluck(LocationsQualities.find({ location: location.locationName }).fetch(), 'quality');
     const favoriteLocations = _.pluck(ProfilesLocations.find({ profile: email }).fetch(), 'location');
     let heart;
