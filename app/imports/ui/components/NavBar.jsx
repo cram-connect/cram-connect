@@ -19,7 +19,7 @@ class NavBar extends React.Component {
               </Menu.Item>
               {this.props.currentUser ? (
                   // eslint-disable-next-line max-len
-                  [<Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add' inverted='true'>Add Contact
+                  [<Menu.Item as={NavLink} activeClassName="active" exact to="/location" key='add' inverted='true'>Random Location
                   </Menu.Item>,
                     <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='list'>List
                       Contacts</Menu.Item>]
@@ -29,7 +29,7 @@ class NavBar extends React.Component {
               ) : ''}
               <Menu.Item position="right">
                 {this.props.currentUser === '' ? (
-                    <Button positive pointing="top right" icon='user' as={NavLink} exact to="/signin">
+                    <Button basic inverted pointing="top right" content="Sign-In" as={NavLink} exact to="/signin">
                     </Button>
                 ) : (
                     <Dropdown text={this.props.currentUser} pointing="top right" icon={'user'}>

@@ -48,15 +48,15 @@ class EditProfile extends React.Component {
       content: 'input',
       buttons: ['Cancel', 'Submit'],
     })
-    .then((imageUrl) => {
-      if (imageUrl) {
-        Profiles.update(this.props.doc._id, { $set: { image: imageUrl } }, (error) => (error ?
-            swal('Error', error.message, 'error') :
-            swal('Success', 'Item updated successfully', 'success')));
-      } else {
-        swal('Image Update Cancelled');
-      }
-    });
+        .then((imageUrl) => {
+          if (imageUrl) {
+            Profiles.update(this.props.doc._id, { $set: { image: imageUrl } }, (error) => (error ?
+                swal('Error', error.message, 'error') :
+                swal('Success', 'Item updated successfully', 'success')));
+          } else {
+            swal('Image Update Cancelled');
+          }
+        });
   }
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
