@@ -9,11 +9,12 @@ import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import MultiSelectField from '../../forms/controllers/MultiSelectField';
 import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
-import { Profiles } from '../../api/profile/Profiles';
-import { ProfilesLocations, profilesLocationsName } from '../../api/profile/LocationQualities';
+import { Profiles, profilesName } from '../../api/profile/Profiles';
+import { ProfilesLocations, profilesLocationsName } from '../../api/profile/ProfileLocations';
 import { ProfilesQualities, profilesQualitiesName } from '../../api/profile/ProfileQualities';
 import { Qualities, qualitiesName } from '../../api/profile/Qualities';
 import { Locations, locationsName } from '../../api/location/Locations';
+import { updateProfileMethod } from '../../startup/both/Methods';
 
 const makeSchema = (allQualities, allLocations) => new SimpleSchema({
   email: { type: String, label: 'Email', optional: true },
@@ -21,7 +22,7 @@ const makeSchema = (allQualities, allLocations) => new SimpleSchema({
   lastName: { type: String, label: 'Last', optional: true },
   major: { type: String, label: 'Major', optional: true },
   image: { type: String, label: 'Picture URL', optional: true },
-  qualities: { type: Array, label: 'Qualities', optional: true },
+  qualities: { type: Array, label: 'Favorite Spot Qualities', optional: true },
   'qualities.$': { type: String, allowedValues: allQualities },
   locations: { type: Array, label: 'Favorite Cram Spots', optional: true },
   'locations.$': { type: String, allowedValues: allLocations },
@@ -32,10 +33,10 @@ class EditProfile extends React.Component {
 
   /** On successful submit, insert the data. */
   submit(data) {
-    const { firstName, lastName, major, image, _id } = data;
-    Profiles.update(_id, { $set: { firstName, lastName, major, image } }, (error) => (error ?
+    Meteor.call(updateProfileMethod, data, (error) => (error ?
         swal('Error', error.message, 'error') :
-        swal('Success', 'Item updated successfully', 'success')));
+        swal('Success', 'Item updated successfully', 'success')
+    ));
   }
 
   /** If user wants to edit profile image, prompt for input with swal */
@@ -82,29 +83,29 @@ class EditProfile extends React.Component {
         <Grid container centered>
           <Grid.Column>
             <Header as="h2" textAlign="center" inverted>Edit Profile</Header>
-            <Segment>
-              <Grid>
-                <Grid.Column width={5}>
-                  <Image src={this.props.doc.image} fluid bordered/>
-                  <Button color='teal' onClick={() => this.changeImage()} fluid>
-                    Edit Profile Image
-                  </Button>
-                </Grid.Column>
-                <Grid.Column width={11}>
-                  <AutoForm schema={formSchema} model={model} onSubmit={data => this.submit(data)}>
-                    <TextField name='firstName' showInlineError={true} placeholder={'First Name'}/>
-                    <TextField name='lastName' showInlineError={true} placeholder={'Last Name'}/>
-                    <TextField name='email' showInlineError={true} placeholder={'Email'} disabled/>
-                    <TextField name='major' showInlineError={true} placeholder={'Major'}/>
-                    <TextField name='image' showInlineError={true} placeholder={'Image URL'} disabled/>
-                    <MultiSelectField name='qualities' showInlineError={true} placeholder={'Qualities'}/>
-                    <MultiSelectField name='locations' showInlineError={true} placeholder={'Favorite Locations'}/>
-                    <SubmitField value='Save Profile'/>
-                    <ErrorsField/>
-                  </AutoForm>
-                </Grid.Column>
-              </Grid>
-            </Segment>
+              <Segment>
+                <Grid>
+                  <Grid.Column width={5}>
+                    <Image src={this.props.doc.image} fluid bordered/>
+                    <Button color='teal' onClick={() => this.changeImage()} fluid>
+                      Edit Profile Image
+                    </Button>
+                  </Grid.Column>
+                  <Grid.Column width={11}>
+                    <AutoForm schema={formSchema} model={model} onSubmit={data => this.submit(data)}>
+                      <TextField name='firstName' showInlineError={true} placeholder={'First Name'}/>
+                      <TextField name='lastName' showInlineError={true} placeholder={'Last Name'}/>
+                      <TextField name='email' showInlineError={true} placeholder={'Email'} disabled/>
+                      <TextField name='major' showInlineError={true} placeholder={'Major'}/>
+                      <TextField name='image' showInlineError={true} placeholder={'Image URL'} disabled/>
+                      <MultiSelectField name='qualities' showInlineError={true} placeholder={'Qualities'}/>
+                      <MultiSelectField name='locations' showInlineError={true} placeholder={'Favorite Locations'}/>
+                      <SubmitField value='Save Profile'/>
+                      <ErrorsField/>
+                    </AutoForm>
+                  </Grid.Column>
+                </Grid>
+              </Segment>
 
           </Grid.Column>
         </Grid>
@@ -122,7 +123,7 @@ EditProfile.propTypes = {
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
   // Get access to Profile documents.
-  const sub1 = Meteor.subscribe('Profiles');
+  const sub1 = Meteor.subscribe(profilesName);
   const sub2 = Meteor.subscribe(locationsName);
   const sub3 = Meteor.subscribe(qualitiesName);
   const sub4 = Meteor.subscribe(profilesLocationsName);
