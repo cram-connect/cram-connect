@@ -5,8 +5,7 @@ import { Grid, Card, Loader, Button, Checkbox, List, Dropdown, Menu, Search } fr
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import Location from '../components/Locations';
-import { Locations, locationsName } from '../../api/location/Locations';
-import { LocationsQualities, locationsQualitiesName } from '../../api/location/LocationsQualities';
+import { Locations } from '../../api/location/Locations';
 
 /** Capacity amount for each place */
 const options = [
@@ -41,7 +40,7 @@ class SearchPage extends React.Component {
   handleSearchChange = (e, { value }) => {
     this.setState({ isLoading: true, value });
 
-    setTimeout(() => {
+    setTimeout() => {
       if (this.state.value.length < 1) return this.setState(initialState);
 
       const re = new RegExp(_.escapeRegExp(this.state.value), 'i');
