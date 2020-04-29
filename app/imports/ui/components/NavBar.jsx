@@ -20,8 +20,14 @@ class NavBar extends React.Component {
                 <Header inverted as='h1'>Cram Connect</Header>
               </Menu.Item>
               {this.props.currentUser ? (
+
                   [<Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add' inverted='true'>
                     <font style={menuNavText}>Add a Spot</font>
+
+                  // eslint-disable-next-line max-len
+                  [<Menu.Item as={NavLink} activeClassName="active" exact to="/location" key='add' inverted='true'>
+                    <font style={menuNavText}>Random Location</font>
+
                   </Menu.Item>,
                     <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='list'>
                       <font style={menuNavText}>All Locations</font>
