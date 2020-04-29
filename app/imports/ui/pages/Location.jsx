@@ -7,7 +7,7 @@ import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
 import { _ } from 'meteor/underscore';
 import { Profiles } from '../../api/profile/Profiles';
 import { Locations } from '../../api/location/Locations';
-import { ProfilesLocations, profilesLocationsName } from '../../api/profile/LocationQualities';
+import { ProfilesLocations, profilesLocationsName } from '../../api/profile/ProfileLocations';
 import { LocationsQualities } from '../../api/location/LocationQualities';
 
 class Location extends React.Component {
