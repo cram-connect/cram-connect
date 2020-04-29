@@ -3,22 +3,22 @@ import SimpleSchema from 'simpl-schema';
 import { Tracker } from 'meteor/tracker';
 
 /** The name of the collection and the global publication. */
-const locationsName = 'Locations';
+const profilesName = 'Profiles';
 
 /** Define a Mongo collection to hold the data. */
-const Locations = new Mongo.Collection(locationsName);
+const Profiles = new Mongo.Collection(profilesName);
 
 /** Define a schema to specify the structure of each document in the collection. */
-const LocationSchema = new SimpleSchema({
-  locationName: String,
-  rating: Number,
-  time: String,
-  description: String,
+const ProfileSchema = new SimpleSchema({
+  firstName: String,
+  lastName: String,
+  major: String,
   image: String,
+  email: String,
 }, { tracker: Tracker });
 
 /** Attach this schema to the collection. */
-Locations.attachSchema(LocationSchema);
+Profiles.attachSchema(ProfileSchema);
 
 /** Make the collection and schema available to other code. */
-export { Locations, LocationSchema, locationsName };
+export { Profiles, ProfileSchema, profilesName };

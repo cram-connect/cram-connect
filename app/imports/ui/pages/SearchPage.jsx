@@ -26,7 +26,7 @@ const source = _.times(5, () => ({
   title: Locations.locationName,
   description: Locations.description,
   image: Locations.image,
-  rating: Locations.ratings,
+  rating: Locations.rating,
 }));
 
 const initialState = { isLoading: false, results: [], value: '' };
