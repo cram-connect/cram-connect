@@ -3,7 +3,7 @@ import { Roles } from 'meteor/alanning:roles';
 import { Contacts } from '../../api/contact/Contacts';
 import { Notes } from '../../api/note/Notes';
 import { Profiles, profilesName } from '../../api/profile/Profiles';
-import { ProfilesLocations, profilesLocationsName } from '../../api/profile/ProfileLocation';
+import { ProfilesLocations, profilesLocationsName } from '../../api/profile/ProfileLocations';
 import { ProfilesQualities, profilesQualitiesName } from '../../api/profile/ProfileQualities';
 import { Qualities, qualitiesName } from '../../api/profile/Qualities';
 import { Locations, locationsName } from '../../api/location/Locations';

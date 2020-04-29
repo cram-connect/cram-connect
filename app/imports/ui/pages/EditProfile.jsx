@@ -10,10 +10,11 @@ import PropTypes from 'prop-types';
 import MultiSelectField from '../../forms/controllers/MultiSelectField';
 import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
 import { Profiles, profilesName } from '../../api/profile/Profiles';
-import { ProfilesLocations, profilesLocationsName } from '../../api/profile/ProfileLocation';
+import { ProfilesLocations, profilesLocationsName } from '../../api/profile/ProfileLocations';
 import { ProfilesQualities, profilesQualitiesName } from '../../api/profile/ProfileQualities';
 import { Qualities, qualitiesName } from '../../api/profile/Qualities';
 import { Locations, locationsName } from '../../api/location/Locations';
+import { updateProfileMethod } from '../../startup/both/Methods';
 
 const makeSchema = (allQualities, allLocations) => new SimpleSchema({
   email: { type: String, label: 'Email', optional: true },
@@ -32,10 +33,10 @@ class EditProfile extends React.Component {
 
   /** On successful submit, insert the data. */
   submit(data) {
-    const { firstName, lastName, major, image, _id } = data;
-    Profiles.update(_id, { $set: { firstName, lastName, major, image } }, (error) => (error ?
+    Meteor.call(updateProfileMethod, data, (error) => (error ?
         swal('Error', error.message, 'error') :
-        swal('Success', 'Item updated successfully', 'success')));
+        swal('Success', 'Item updated successfully', 'success')
+    ));
   }
 
   /** If user wants to edit profile image, prompt for input with swal */

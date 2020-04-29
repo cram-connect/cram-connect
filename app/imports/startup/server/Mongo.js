@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Contacts } from '../../api/contact/Contacts';
 import { Profiles } from '../../api/profile/Profiles';
-import { ProfilesLocations } from '../../api/profile/ProfileLocation';
+import { ProfilesLocations } from '../../api/profile/ProfileLocations';
 import { ProfilesQualities } from '../../api/profile/ProfileQualities';
 import { Qualities } from '../../api/profile/Qualities';
 import { Locations } from '../../api/location/Locations';
