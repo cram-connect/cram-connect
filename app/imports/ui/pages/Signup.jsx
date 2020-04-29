@@ -40,94 +40,93 @@ class Signup extends React.Component {
       return <Redirect to={from}/>;
     }
     return (
-        <Container>
-          <Grid textAlign="left" color='white'>
-            <Grid.Column>
-              <Header as="h2" textAlign="center" inverted>
-                Register your account
-              </Header>
-              <Form onSubmit={this.submit}>
-                <Segment stacked>
-                  <Form.Group widths='equal'>
-                    <Form.Input
-                        label="First Name"
-                        name="firstName"
-                        type="firstName"
-                        placeholder="First name"
-                        onChange={this.handleChange}
-                    />
-                    <Form.Input
-                        label="Last Name"
-                        name="lastName"
-                        placeholder="Last Name"
-                        type="lastName"
-                        onChange={this.handleChange}
-                    />
-                  </Form.Group>
-                  <Form.Group widths='equal'>
-                    <Form.Input
-                        label="Major"
-                        name="major"
-                        type="major"
-                        placeholder="Major"
-                        onChange={this.handleChange}
-                    />
-                    <Form.Input
-                        label="Image URL"
-                        name="image"
-                        placeholder="Image URL"
-                        type="url"
-                        onChange={this.handleChange}
-                    />
-                  </Form.Group>
-                  <Form.Group widths='equal'>
-                    <Form.Input
-                        label="Email"
-                        name="email"
-                        type="email"
-                        placeholder="E-mail address"
-                        onChange={this.handleChange}
-                    />
-                    <Form.Input
-                        label="Password"
-                        name="password"
-                        placeholder="Password"
-                        type="password"
-                        onChange={this.handleChange}
-                    />
-                  </Form.Group>
+      <Container>
+        <Header as="h2" textAlign="center" inverted>
+          Register your account
+            </Header>
+            <Form onSubmit={this.submit}>
+              <Segment stacked>
+                <Form.Group widths='equal'>
                   <Form.Input
-                      label="Preferences"
-                      name="preference"
-                      type="preference"
-                      placeholder="Preferences"
+                      required
+                      label="First Name"
+                      name="firstName"
+                      type="firstname"
+                      placeholder="First name"
                       onChange={this.handleChange}
                   />
-                  <Grid columns={2} centered>
-                    <Grid.Column>
-                      <Form.Button animated='fade' fluid>
-                        <Button.Content hidden>Let&apos;s Get Crammin&apos;</Button.Content>
-                        <Button.Content visible>Submit</Button.Content>
-                      </Form.Button>
-                    </Grid.Column>
-                  </Grid>
-                </Segment>
-              </Form>
-              <Message>
-                Already have an account? Login <Link to="/signin">here</Link>
-              </Message>
-              {this.state.error === '' ? (
-                  ''
-              ) : (
-                  <Message
-                      error
-                      header="Registration was not successful"
-                      content={this.state.error}
+                  <Form.Input
+                      required
+                      label="Last Name"
+                      name="lastName"
+                      placeholder="Last name"
+                      type="lastName"
+                      onChange={this.handleChange}
                   />
-              )}
-            </Grid.Column>
-          </Grid>
-        </Container>
+                </Form.Group>
+                <Form.Group widths='equal'>
+                  <Form.Input
+                      required
+                      label="Email"
+                      name="email"
+                      type="email"
+                      placeholder="E-mail address"
+                      onChange={this.handleChange}
+                  />
+                  <Form.Input
+                      label="Major"
+                      name="major"
+                      placeholder="Major"
+                      type="major"
+                      onChange={this.handleChange}
+                  />
+                </Form.Group>
+                <Form.Group widths='equal'>
+                  <Form.Input
+                      required
+                      label="Password"
+                      name="password"
+                      placeholder="Password"
+                      type="password"
+                      onChange={this.handleChange}
+                  />
+                  <Form.Input
+                      label="Image URL"
+                      name="imageUrl"
+                      placeholder="URL"
+                      type="imageUrl"
+                      onChange={this.handleChange}
+                  />
+                </Form.Group>
+                <Form.Input
+                    label="Preferences"
+                    name="preferece"
+                    type="preference"
+                    onChange={this.handleChange}
+                />
+                <Grid centered columns={2}>
+                <Grid.Column>
+                  <Form.Button fluid animated='fade'>
+                    <Button.Content visible>Submit</Button.Content>
+                    <Button.Content hidden>Let&apos;s Get Crammin&apos;!</Button.Content>
+                  </Form.Button>
+                </Grid.Column>
+                </Grid>
+              </Segment>
+            </Form>
+            <Message>
+              Already have an account? Login <Link to="/signin">here</Link>
+            </Message>
+            {this.state.error === '' ? (
+              ''
+            ) : (
+              <Message
+                error
+                header="Registration was not successful"
+                content={this.state.error}
+              />
+            )}
+      </Container>
     );
   }
 }

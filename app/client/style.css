@@ -8,8 +8,11 @@
   padding-bottom: 1px;
 }
 
-h2.ui.inverted.header {
+h2.ui.inverted.header{
+  font-family: 'Lexend Deca';
   font-size: 54px;
+  padding-top: 50px;
+  padding-bottom: 10px;
 }
 
 h3.ui.inverted.header {
