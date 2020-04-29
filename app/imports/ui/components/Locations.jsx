@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Image, Rating } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
-
+import { _ } from 'meteor/underscore';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class Location extends React.Component {
@@ -14,14 +14,14 @@ class Location extends React.Component {
   render() {
     return (
         <Card centered>
-          <Image src={this.props.location.image} wrapped ui={false} />
           <Card.Content>
-            <Card.Header>{this.props.location.locationName}</Card.Header>
+            <Image src={this.props.location.image} wrapped ui={false} />
+            <Card.Header>{this.props.location.state}</Card.Header>
             <Card.Meta>
               <Rating icon='star' defaultRating={this.props.location.rating} maxRating={4} />
             </Card.Meta>
             <Card.Meta>
-              {this.props.location.qualities}
+              {this.props.qualities}
             </Card.Meta>
             <Card.Meta>
               {this.props.location.time}
@@ -38,6 +38,7 @@ class Location extends React.Component {
 /** Require a document to be passed to this component. */
 Location.propTypes = {
   location: PropTypes.object.isRequired,
+  qualities: PropTypes.array.isRequired,
   Locations: PropTypes.object.isRequired,
 };
 

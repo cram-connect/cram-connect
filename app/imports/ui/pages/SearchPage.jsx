@@ -5,7 +5,8 @@ import { Grid, Card, Loader, Button, Checkbox, List, Dropdown, Menu, Search } fr
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import Location from '../components/Locations';
-import { Locations } from '../../api/location/Locations';
+import { Locations, locationsName } from '../../api/location/Locations';
+import { LocationsQualities, locationsQualitiesName } from '../../api/location/LocationQualities';
 
 /** Capacity amount for each place */
 const options = [
@@ -93,7 +94,9 @@ class SearchPage extends React.Component {
             />
             <Card.Group>
               {this.props.locations.map((location, index) => <Location key={index}
-                                                                       location={location} Locations={Locations}/>)}
+                                                                       location={location}
+                                                                       Locations={Locations}
+                                                                       qualities={this.props.locationqualities.filter(quality => (quality.location === location.location))}/>)}
             </Card.Group>
           </Grid.Column>
         </Grid>
@@ -105,14 +108,17 @@ class SearchPage extends React.Component {
 SearchPage.propTypes = {
   locations: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
+  locationqualities: PropTypes.array.isRequired,
 };
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
   // Get access to Stuff documents.
-  const subscription = Meteor.subscribe('Locations');
+  const subscription = Meteor.subscribe(locationsName);
+  const sub2 = Meteor.subscribe(locationsQualitiesName);
   return {
     locations: Locations.find({}).fetch(),
-    ready: subscription.ready(),
+    locationqualities: LocationsQualities.find({}).fetch(),
+    ready: subscription.ready() && sub2.ready(),
   };
 })(SearchPage);
