@@ -7,7 +7,7 @@ import { ProfilesLocations, profilesLocationsName } from '../../api/profile/Prof
 import { ProfilesQualities, profilesQualitiesName } from '../../api/profile/ProfileQualities';
 import { Qualities, qualitiesName } from '../../api/profile/Qualities';
 import { Locations, locationsName } from '../../api/location/Locations';
-import { LocationsQualities, locationsQualitiesName } from '../../api/location/LocationQualities';
+import { LocationsQualities, locationsQualitiesName } from '../../api/location/LocationsQualities';
 
 /** This subscription publishes only the documents associated with the logged in user */
 Meteor.publish('Contacts', function publish() {

@@ -6,7 +6,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import Location from '../components/Locations';
 import { Locations, locationsName } from '../../api/location/Locations';
-import { LocationsQualities, locationsQualitiesName } from '../../api/location/LocationQualities';
+import { LocationsQualities, locationsQualitiesName } from '../../api/location/LocationsQualities';
 
 /** Capacity amount for each place */
 const options = [
@@ -121,6 +121,7 @@ export default withTracker(() => {
   const subscription2 = Meteor.subscribe('LocationQualities');
   return {
     locations: Locations.find({}).fetch(),
+    locationqualities: Locations.find({}).fetch(),
     ready: subscription.ready() && subscription2.ready(),
   };
 })(SearchPage);
