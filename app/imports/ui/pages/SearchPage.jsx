@@ -6,7 +6,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import Location from '../components/Locations';
 import { Locations, locationsName } from '../../api/location/Locations';
-import { LocationsQualities, locationsQualitiesName } from '../../api/location/LocationsQualities';
+import { LocationsQualities, locationsQualitiesName } from '../../api/location/LocationQualities';
 
 /** Capacity amount for each place */
 const options = [
@@ -65,8 +65,9 @@ class SearchPage extends React.Component {
 
     const allLocations = Locations.find().fetch();
     console.log(allLocations);
+    console.log(this.props.locations);
 
-    return (
+  return (
         <Grid centered>
           <Grid.Column width={3}>
             <Button>Free</Button>
@@ -96,16 +97,17 @@ class SearchPage extends React.Component {
                 {...this.props}
             />
             <Card.Group>
-              {this.props.locations.map((location, index) => <Location key={index}
-                                                                       location={location}
-                                                                       Locations={Locations}
-                                                                       qualities={this.props.locationqualities.filter(quality => (quality.location === location.location))}/>)}
+              {this.props.locations.map((spot, index) => <Location key={index}
+                                                                       spot={spot}
+                                                                       Locations={Locations} />)}
             </Card.Group>
           </Grid.Column>
         </Grid>
     );
   }
 }
+
+/** qualities={this.props.locationqualities.filter(quality => (quality.location === location.location))} */
 
 /** Require an array of Stuff documents in the props. */
 SearchPage.propTypes = {
@@ -121,7 +123,7 @@ export default withTracker(() => {
   const subscription2 = Meteor.subscribe('LocationQualities');
   return {
     locations: Locations.find({}).fetch(),
-    locationqualities: Locations.find({}).fetch(),
+    locationqualities: LocationsQualities.find({}).fetch(),
     ready: subscription.ready() && subscription2.ready(),
   };
 })(SearchPage);

@@ -12,22 +12,25 @@ class Location extends React.Component {
   }
 
   render() {
+    console.log(this.props.spot);
+    console.log(this.props.Locations);
+
     return (
         <Card centered>
           <Card.Content>
-            <Image src={this.props.location.image} wrapped ui={false} />
-            <Card.Header>{this.props.location.state}</Card.Header>
+            <Image src={this.props.spot.image} wrapped ui={false} size='mini' />
+            <Card.Header>{this.props.spot.state}</Card.Header>
             <Card.Meta>
-              <Rating icon='star' defaultRating={this.props.location.rating} maxRating={4} />
+              <Rating icon='star' defaultRating={this.props.spot.rating} maxRating={4} />
             </Card.Meta>
             <Card.Meta>
-              {this.props.qualities}
+              hello
             </Card.Meta>
             <Card.Meta>
-              {this.props.location.time}
+              {this.props.spot.time}
             </Card.Meta>
             <Card.Description>
-              {this.props.location.description}
+              {this.props.spot.description}
             </Card.Description>
           </Card.Content>
         </Card>
@@ -35,10 +38,11 @@ class Location extends React.Component {
   }
 }
 
+/** qualities: PropTypes.array.isRequired, */
+
 /** Require a document to be passed to this component. */
 Location.propTypes = {
-  location: PropTypes.object.isRequired,
-  qualities: PropTypes.array.isRequired,
+  spot: PropTypes.object.isRequired,
   Locations: PropTypes.object.isRequired,
 };
 
