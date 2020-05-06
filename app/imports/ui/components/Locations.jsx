@@ -18,7 +18,7 @@ class Location extends React.Component {
     return (
         <Card centered>
           <Card.Content>
-            <Image src={this.props.spot.image} wrapped ui={false} size='mini' />
+            <Image src={this.props.spot.image} wrapped ui={true} />
             <Card.Header>{this.props.spot.state}</Card.Header>
             <Card.Meta>
               <Rating icon='star' defaultRating={this.props.spot.rating} maxRating={4} />
