@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 import { Meteor } from 'meteor/meteor';
-import { Grid, Card, Loader, Button, Checkbox, List, Dropdown, Menu, Search } from 'semantic-ui-react';
+import { Grid, Card, Loader, Button, Checkbox, List, Dropdown, Menu, Header } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import Location from '../components/Locations';
@@ -69,33 +69,8 @@ class SearchPage extends React.Component {
 
   return (
         <Grid centered>
-          <Grid.Column width={3}>
-            <Button>Free</Button>
-            <Button>$</Button>
-            <Button>$$</Button>
-            <Menu compact>
-              <Dropdown text='Capacity' options={options} simple item />
-            </Menu>
-            <List>
-              <List.Item><Checkbox label='Open Now' /></List.Item>
-              <List.Item><Checkbox label='On Campus' /></List.Item>
-              <List.Item><Checkbox label='Off Campus' /></List.Item>
-              <List.Item><Checkbox label='Noisy' /></List.Item>
-              <List.Item> <Checkbox label='Quiet' /></List.Item>
-            </List>
-          </Grid.Column>
-          <Grid.Column width={7}>
-            <Search
-                fluid
-                loading={isLoading}
-                onResultSelect={this.handleResultSelect}
-                onSearchChange={_.debounce(this.handleSearchChange, 500, {
-                  leading: true,
-                })}
-                results={results}
-                value={value}
-                {...this.props}
-            />
+          <Grid.Column>
+            <Header as="h2" textAlign="center">Favorites</Header>
             <Card.Group>
               {this.props.locations.map((spot, index) => <Location key={index}
                                                                        spot={spot}
