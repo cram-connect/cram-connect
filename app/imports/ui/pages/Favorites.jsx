@@ -70,7 +70,7 @@ class SearchPage extends React.Component {
   return (
         <Grid centered>
           <Grid.Column>
-            <Header as="h2" textAlign="center">Favorites</Header>
+            <Header as="h2" textAlign="center" inverted>Favorites</Header>
             <Card.Group>
               {this.props.locations.map((spot, index) => <Location key={index}
                                                                        spot={spot}
