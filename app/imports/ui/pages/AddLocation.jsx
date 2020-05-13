@@ -15,6 +15,8 @@ const formSchema = new SimpleSchema({
   time: String,
   description: String,
   image: String,
+  latitude: Number,
+  longitude: Number,
 });
 
 /** Renders the Page for adding a document. */
@@ -22,9 +24,9 @@ class AddLocation extends React.Component {
 
   /** On submit, insert the data. */
   submit(data, formRef) {
-    const { locationName, rating, time, description, image } = data;
+    const { locationName, rating, time, description, image, latitude, longitude } = data;
     const owner = Meteor.user().username;
-    Locations.insert({ locationName, rating, time, description, image, owner },
+    Locations.insert({ locationName, rating, time, description, image, latitude, longitude, owner },
         (error) => {
           if (error) {
             swal('Error', error.message, 'error');
@@ -53,6 +55,8 @@ class AddLocation extends React.Component {
                   <TextField name='image'/>
                   <TextField name='description'/>
                   <TextField name='time'/>
+                  <TextField name='latitude'/>
+                  <TextField name='longitude'/>
                   <SubmitField value='Submit'/>
                   <ErrorsField/>
                 </Segment>
