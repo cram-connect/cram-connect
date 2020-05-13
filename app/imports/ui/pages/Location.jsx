@@ -19,17 +19,19 @@ class Location extends React.Component {
 
   renderPage() {
     const email = Meteor.user().username;
-    const location = _.sample(Locations.find().fetch());
-    const number = location.rating;
-    const locationQuality = _.pluck(LocationsQualities.find({ location: location.locationName }).fetch(), 'quality');
     const favoriteLocations = _.pluck(ProfilesLocations.find({ profile: email }).fetch(), 'location');
+    let location;
+    do {
+      location = _.sample(Locations.find().fetch());
+    } while (_.contains(favoriteLocations, location.locationName));
+    const locationQuality = _.pluck(LocationsQualities.find({ location: location.locationName }).fetch(), 'quality');
+    const number = location.rating;
     let heart;
     if (_.contains(favoriteLocations, location)) {
       heart = 1;
     } else {
       heart = 0;
     }
-    console.log(this.props)
     return (
         <Container>
           <Segment.Group>
