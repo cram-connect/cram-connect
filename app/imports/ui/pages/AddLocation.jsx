@@ -8,13 +8,19 @@ import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
 import SimpleSchema from 'simpl-schema';
 import { Locations } from '../../api/location/Locations';
 
+const property = { color: 'grey', fontSize: '18px', fontFamily: 'Lexend Deca' };
+
 /** Create a schema to specify the structure of the data to appear in the form. */
 const formSchema = new SimpleSchema({
-  locationName: String,
-  rating: Number,
-  time: String,
-  description: String,
-  image: String,
+  locationName: { type: String, label: <font style={property}>Name of Location</font>, optional: true },
+  rating: { type: Number, label: <font style={property}>Rating</font>, optional: true },
+  time: { type: String, label: <font style={property}>Hours of Operation</font>, optional: true },
+  description: { type: String, label: <font style={property}>Description</font>, optional: true },
+  image: { type: String, label: <font style={property}>Image URL</font>, optional: true },
+  latitude: { type: Number, label: <font style={property}>Latitude (Must be between -90&#xb0; to +90&#xb0;)</font>,
+    optional: true },
+  longitude: { type: Number, label: <font style={property}>Longitude (Must be between -180&#xb0; to +180&#xb0;)</font>,
+    optional: true },
 });
 
 /** Renders the Page for adding a document. */
@@ -48,12 +54,18 @@ class AddLocation extends React.Component {
               </div>
               <AutoForm ref={ref => { fRef = ref; }} schema={formSchema} onSubmit={data => this.submit(data, fRef)} >
                 <Segment>
-                  <TextField name='locationName'/>
-                  <TextField name='rating'/>
-                  <TextField name='image'/>
-                  <TextField name='description'/>
-                  <TextField name='time'/>
-                  <SubmitField value='Submit'/>
+                  <TextField name='locationName' showInlineError={true} placeholder={'e.g., Starbucks Coffee'}/>
+                  <TextField name='rating' showInlineError={true} placeholder={'e.g. 5'}/>
+                  <TextField name='image' showInlineError={true} placeholder={'e.g. https://starbucks.com/logo.png'}/>
+                  <TextField name='description' showInlineError={true}
+                             placeholder={'e.g. A peaceful place that smells like coffee.'}/>
+                  <TextField name='time' showInlineError={true}
+                             placeholder={'e.g. Monday-Friday: 4:30am - 11:30pm'}/>
+                  <TextField name='latitude' showInlineError={true}
+                             placeholder={'e.g. -45'}/>
+                  <TextField name='longitude'
+                             showInlineError={true} placeholder={'e.g. 135'}/>
+                  <SubmitField centered value='Submit'/>
                   <ErrorsField/>
                 </Segment>
               </AutoForm>

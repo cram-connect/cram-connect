@@ -4,6 +4,7 @@ import { Grid, Header, Image } from 'semantic-ui-react';
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
   render() {
+    const logo = { paddingTop: '15px', color: 'white', fontSize: '54px', fontFamily: 'Pacifico' };
     const divStyle = { paddingTop: '15px', color: 'white', fontSize: '16px' };
     const attention = { paddingTop: '15px', color: 'white', fontSize: '14px' };
     const tagline = { paddingTop: '15px', color: 'white', fontSize: '30px', fontFamily: 'Pacifico' };
@@ -17,7 +18,7 @@ class Landing extends React.Component {
             </Grid.Column>
 
             <Grid.Column textAlign='center'>
-              <Header as='h2' inverted> Cram Connect </Header>
+              <Header as='h2' inverted> <font style={logo}>Cram Connect</font></Header>
               <font style={attention}>
                 Are you tired of being unable to focus on your assignments because of your crazy roommate?
                 Perhaps you&#39;re too comfortable in the quiet of your room and need a fast-paced environment
