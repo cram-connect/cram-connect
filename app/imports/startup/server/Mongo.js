@@ -44,9 +44,9 @@ function addProfile({ firstName, lastName, email, major, qualities, favorites, i
 }
 
 /** Define a new location. Error if location already exists.  */
-function addLocation({ locationName, qualities, rating, time, description, image }) {
+function addLocation({ locationName, qualities, rating, time, description, image, lat, lng }) {
   console.log(`Defining project ${locationName}`);
-  Locations.insert({ locationName, rating, time, description, image });
+  Locations.insert({ locationName, rating, time, description, image, lat, lng });
   _.map(qualities, (quality) => LocationsQualities.insert({ location: locationName, quality }));
   // Make sure qualities are defined in the Qualities collection if they weren't already.
   _.map(qualities, (quality) => addQuality(quality));

@@ -15,6 +15,8 @@ const LocationSchema = new SimpleSchema({
   time: String,
   description: String,
   image: String,
+  lat: Number,
+  lng: Number,
 }, { tracker: Tracker });
 
 /** Attach this schema to the collection. */
