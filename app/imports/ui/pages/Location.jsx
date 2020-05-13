@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Loader, Rating, Header, Segment, Image, Container, Label } from 'semantic-ui-react';
+import { Button, Grid, Loader, Rating, Icon, Header, Segment, Image, Container, Label } from 'semantic-ui-react';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
@@ -12,6 +12,17 @@ import { ProfilesLocations, profilesLocationsName } from '../../api/profile/Prof
 import { LocationsQualities } from '../../api/location/LocationQualities';
 
 class Location extends React.Component {
+
+  handleClick(location, email) {
+    console.log(location, email);
+    const exists = ProfilesLocations.find({ profile: email, location: location.locationName }).fetch();
+    if (exists.length === 0) {
+      ProfilesLocations.insert({ profile: email, location: location.locationName });
+    } else {
+      ProfilesLocations.remove({ _id: exists[0]._id });
+    }
+
+  }
 
   render() {
     return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
@@ -28,9 +39,9 @@ class Location extends React.Component {
     const number = location.rating;
     let heart;
     if (_.contains(favoriteLocations, location)) {
-      heart = 1;
+      heart = 'red';
     } else {
-      heart = 0;
+      heart = 'white';
     }
     return (
         <Container>
@@ -43,7 +54,9 @@ class Location extends React.Component {
                 </Label>
               </Grid.Column>
               <Grid.Column textAlign='right'>
-                  <Rating size='massive' icon='heart' defaultRating={heart} maxRating={1}/>
+                <Button color={heart} onClick={this.handleClick.bind(this, location, email)}>
+                  <Icon name='heart'/> Favorite
+                </Button>
               </Grid.Column>
             </Grid>
             <Image
