@@ -12,9 +12,20 @@ import { LocationsQualities } from '../../api/location/LocationQualities';
 
 class Location extends React.Component {
 
-  handleRate() {
-
+  constructor(props) {
+    super(props);
+    this.state = { email: '', location: '', error: '', redirectToReferer: false };
   }
+
+  check = () => {
+    const place = ProfilesLocations.find({ profile: this.state.email, location: this.state.location }).fetch();
+    console.log(place);
+    if (place.length === 0) {
+      ProfilesLocations.insert({ profile: this.state.email, location: this.state.location });
+    } else {
+      ProfilesLocations.remove({ _id: place[0]._id });
+    }
+  };
 
   render() {
     return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
@@ -25,12 +36,13 @@ class Location extends React.Component {
     const location = _.sample(Locations.find().fetch());
     const number = location.rating;
     const locationQuality = _.pluck(LocationsQualities.find({ location: location.locationName }).fetch(), 'quality');
-    const favoriteLocations = _.pluck(ProfilesLocations.find({ profile: email }).fetch(), 'location');
+    const favoriteLocations = ProfilesLocations.find({ profile: email, location: location.locationName }).fetch();
+    this.setState({ email: email, location: location.locationName })
     let heart;
-    if (_.contains(favoriteLocations, location)) {
-      heart = 1;
-    } else {
+    if (favoriteLocations.length === 0) {
       heart = 0;
+    } else {
+      heart = 1;
     }
     return (
         <Container>
@@ -43,7 +55,8 @@ class Location extends React.Component {
                 </Label>
               </Grid.Column>
               <Grid.Column textAlign='right'>
-                  <Rating size='huge' icon='heart' defaultRating={heart} maxRating={1} onRate={this.handleRate()}/>
+                  <Rating defaultRating={heart} size='massive' icon='heart' maxRating={1}
+                          onClick={this.check}/>
               </Grid.Column>
             </Grid>
             <Image
