@@ -16,6 +16,8 @@ const formSchema = new SimpleSchema({
   rating: { type: Number, label: <font style={property}>Rating</font>, optional: true },
   time: { type: String, label: <font style={property}>Hours of Operation</font>, optional: true },
   description: { type: String, label: <font style={property}>Description</font>, optional: true },
+  qualities: { type: Array, label: <font style={property}>Qualities (Separated by Commas)</font>, optional: true },
+  'qualities.$': { type: String },
   image: { type: String, label: <font style={property}>Image URL</font>, optional: true },
   latitude: { type: Number, label: <font style={property}>Latitude (Must be between -90&#xb0; to +90&#xb0;)</font>,
     optional: true },
@@ -59,6 +61,8 @@ class AddLocation extends React.Component {
                   <TextField name='image' showInlineError={true} placeholder={'e.g. https://starbucks.com/logo.png'}/>
                   <TextField name='description' showInlineError={true}
                              placeholder={'e.g. A peaceful place that smells like coffee.'}/>
+                  <TextField name='qualities' showInlineError={true}
+                             placeholder={'e.g. Outside Food/Drinks Allowed, Noisy, Food Available'}/>
                   <TextField name='time' showInlineError={true}
                              placeholder={'e.g. Monday-Friday: 4:30am - 11:30pm'}/>
                   <TextField name='latitude' showInlineError={true}
