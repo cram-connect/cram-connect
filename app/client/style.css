@@ -35,6 +35,14 @@ h3.ui.inverted.header {
   margin-right: 20px;
 }
 
+.leaflet-container {
+  height: 180px;
+}
+
+#mapid {
+  height: 180px;
+}
+
 .ui.icon.button {
   color: white;
   background-color: transparent;
