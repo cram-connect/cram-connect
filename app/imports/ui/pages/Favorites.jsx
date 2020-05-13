@@ -7,6 +7,8 @@ import PropTypes from 'prop-types';
 import Location from '../components/Locations';
 import { Locations, locationsName } from '../../api/location/Locations';
 import { LocationsQualities, locationsQualitiesName } from '../../api/location/LocationQualities';
+import { ProfilesLocations, ProfileLocationsName } from '../../api/profile/ProfileLocations';
+import { Profiles } from '../../api/profile/Profiles';
 
 /** Capacity amount for each place */
 const options = [
@@ -33,7 +35,7 @@ const source = _.times(6, () => ({
 const initialState = { isLoading: false, results: [], value: '' };
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
-class SearchPage extends React.Component {
+class Favorites extends React.Component {
   state = initialState;
 
   handleResultSelect = (e, { result }) => this.setState({ value: result.title })
@@ -67,6 +69,9 @@ class SearchPage extends React.Component {
     console.log(allLocations);
     console.log(this.props.locations);
 
+    const userName = Profiles.findOne({}).fetch().email;
+    const favorites = ProfilesLocations.find({ profile: userName }).fetch();
+
   return (
         <Grid centered>
           <Grid.Column>
@@ -85,7 +90,7 @@ class SearchPage extends React.Component {
 /** qualities={this.props.locationqualities.filter(quality => (quality.location === location.location))} */
 
 /** Require an array of Stuff documents in the props. */
-SearchPage.propTypes = {
+Favorites.propTypes = {
   locations: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
   locationqualities: PropTypes.array.isRequired,
@@ -96,9 +101,11 @@ export default withTracker(() => {
   // Get access to subscriptions.
   const subscription = Meteor.subscribe('Locations');
   const subscription2 = Meteor.subscribe('LocationQualities');
+  const subscription3 = Meteor.subscribe('ProfileLocations');
+  const subscription4 = Meteor.subscribe('Profiles');
   return {
     locations: Locations.find({}).fetch(),
     locationqualities: LocationsQualities.find({}).fetch(),
-    ready: subscription.ready() && subscription2.ready(),
+    ready: subscription.ready() && subscription2.ready() && subscription3.ready() && subscription4.ready(),
   };
-})(SearchPage);
+})(Favorites);
