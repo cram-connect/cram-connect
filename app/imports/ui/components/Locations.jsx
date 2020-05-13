@@ -1,6 +1,7 @@
 import React from 'react';
-import { Card, Image, Rating } from 'semantic-ui-react';
+import { Card, Image, Rating, Button } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
+import swal from 'sweetalert';
 import { withRouter } from 'react-router-dom';
 import { _ } from 'meteor/underscore';
 
@@ -11,9 +12,36 @@ class Location extends React.Component {
     if( confirm("Do you really want to delete this study spot?") ) this.props.Locations.remove(docId);
   }
 
+  /** Remove the profile-location link to remove favorite */
+  removeFavorite(docID) {
+    console.log(`deleting item: ${docID}`);
+    swal({
+      title: 'Are you sure?',
+      text: 'This is a really cool spot!',
+      icon: 'warning',
+      buttons: true,
+      dangerMode: true,
+    })
+        .then((willDelete) => {
+          if (willDelete) {
+            this.props.ProfilesLocations.remove(docID);
+            swal('Poof! Your favorite has been removed!', {
+              icon: 'success',
+            });
+          } else {
+            swal('Got it. Your favorite is not going anywhere!');
+          }
+        });
+  }
+
   render() {
     console.log(this.props.spot);
     console.log(this.props.Locations);
+
+    /** Extrapolate ID of location from ProfilesLocations to destroy favorite link */
+    // const locationID = _.filter(this.props.ProfilesLocations, (locationInfo) => _.where(locationInfo, ));
+
+    // console.log(locationID);
 
     return (
         <Card centered>
@@ -33,6 +61,9 @@ class Location extends React.Component {
               {this.props.spot.description}
             </Card.Description>
           </Card.Content>
+          <Card.Content extra>
+            <Button content='Remove Favorite' fluid onClick={() => this.removeFavorite(this.props.spot._id)}/>
+          </Card.Content>
         </Card>
     );
   }
@@ -43,6 +74,7 @@ class Location extends React.Component {
 /** Require a document to be passed to this component. */
 Location.propTypes = {
   spot: PropTypes.object.isRequired,
+  ProfilesLocations: PropTypes.object.isRequired,
   Locations: PropTypes.object.isRequired,
 };
 
