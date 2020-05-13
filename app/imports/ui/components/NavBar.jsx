@@ -25,7 +25,7 @@ class NavBar extends React.Component {
                     <font style={menuNavText}>Add a Spot</font>
                   </Menu.Item>,
                     <Menu.Item as={NavLink} activeClassName="active" exact to="/location" key='list'>
-                      <font style={menuNavText}>Random Location</font>
+                      <font style={menuNavText}>Discover</font>
                     </Menu.Item>]
               ) : ''}
               {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
