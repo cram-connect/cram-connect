@@ -20,13 +20,16 @@ class Favorites extends React.Component {
   /** Render the page once subscriptions have been received. */
   renderPage() {
     const email = Meteor.user().username;
+    /**  pull locationsID associations */
+    const userLocationsIds = _.map(ProfilesLocations.find({ profile: email }).fetch(), function(locationId) { return { _id: locationId._id, location: locationId.location };});
+    // console.log(userLocationsIds);
     /** check locations associated with specific user */
     const userLocations = _.pluck(ProfilesLocations.find({ profile: email }).fetch(), 'location');
-    console.log(userLocations);
+    // console.log(userLocations);
     /**  filter out location information that is not relevant to user */
     const favorites = _.filter(this.props.locations,
         (locationData) => _.contains(userLocations, locationData.locationName));
-    console.log(favorites);
+    // console.log(favorites);
 
   return (
         <Grid centered>
@@ -35,6 +38,7 @@ class Favorites extends React.Component {
             <Card.Group>
               {favorites.map((spot, index) => <Location key={index}
                                                                   spot={spot}
+                                                                  userLocationsIds={userLocationsIds}
                                                                   ProfilesLocations={ProfilesLocations}
                                                                   Locations={Locations} />)}
             </Card.Group>

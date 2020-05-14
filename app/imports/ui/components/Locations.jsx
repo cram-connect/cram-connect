@@ -1,9 +1,10 @@
 import React from 'react';
-import { Card, Image, Rating, Button } from 'semantic-ui-react';
+import { Card, Image, Rating, Button, Icon } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import swal from 'sweetalert';
 import { withRouter } from 'react-router-dom';
 import { _ } from 'meteor/underscore';
+import { ProfilesLocations } from '../../api/profile/ProfileLocations';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class Location extends React.Component {
@@ -35,13 +36,9 @@ class Location extends React.Component {
   }
 
   render() {
-    console.log(this.props.spot);
-    console.log(this.props.Locations);
-
     /** Extrapolate ID of location from ProfilesLocations to destroy favorite link */
-    // const locationID = _.filter(this.props.ProfilesLocations, (locationInfo) => _.where(locationInfo, ));
-
-    // console.log(locationID);
+    const locationID = _.find(this.props.userLocationsIds, locationId => locationId.location === this.props.spot.locationName);
+    console.log(locationID);
 
     return (
         <Card centered>
@@ -62,7 +59,12 @@ class Location extends React.Component {
             </Card.Description>
           </Card.Content>
           <Card.Content extra>
-            <Button content='Remove Favorite' fluid onClick={() => this.removeFavorite(this.props.spot._id)}/>
+            <Button floated='right' animated onClick={() => this.removeFavorite(locationID._id)}>
+              <Button.Content visible>Remove</Button.Content>
+              <Button.Content hidden>
+                <Icon name='heartbeat'/>
+              </Button.Content>
+            </Button>
           </Card.Content>
         </Card>
     );
@@ -74,8 +76,9 @@ class Location extends React.Component {
 /** Require a document to be passed to this component. */
 Location.propTypes = {
   spot: PropTypes.object.isRequired,
-  ProfilesLocations: PropTypes.object.isRequired,
+  userLocationsIds: PropTypes.array.isRequired,
   Locations: PropTypes.object.isRequired,
+  ProfilesLocations: PropTypes.object.isRequired,
 };
 
 /** Wrap this component in withRouter since we use the <Link> React Router element. */
