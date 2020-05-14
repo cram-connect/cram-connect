@@ -35,7 +35,7 @@ class Favorites extends React.Component {
         <Grid centered container>
           <Grid.Column>
             <Header as="h2" textAlign="center" inverted>Favorites</Header>
-            <Card.Group>
+            <Card.Group centered>
               {favorites.map((spot, index) => <FavoriteLocations key={index}
                                                                   spot={spot}
                                                                   userLocationsIds={userLocationsIds}
