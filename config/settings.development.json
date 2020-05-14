@@ -58,7 +58,7 @@
         "Can Eat"
       ],
       "rating": 5,
-      "time": "Monday: 5am - 11pm",
+      "time": "Mon-Sat: 9:00am - 5:00pm",
       "description": "Library near Sinclair circle.",
       "image": "https://i.pinimg.com/originals/5e/b9/25/5eb9251699c57918a061adb36e44a3cc.jpg",
       "lat": 21.2984,
@@ -72,7 +72,7 @@
         "No Food"
       ],
       "rating": 3,
-      "time": "Monday: 5am - 11pm",
+      "time": "Mon-Fri: 9:00am - 5:00pm",
       "description": "Quiet library with air conditioning.",
       "image": "https://manoa.hawaii.edu/library/wp-content/uploads/2017/10/Sunny-Alcove.jpg",
       "lat": 21.3007,
@@ -86,7 +86,7 @@
         "Stinky"
       ],
       "rating": "1",
-      "time": "Tuesday: 7am - 10pm",
+      "time": "Mon-Sat: 7:00am - 10:00pm",
       "description": "Open and active study space in courtyard.",
       "image": "https://historichawaii.org/wp-content/uploads/2014/02/Oahu_Honolulu_DoleStreet_2411_photo_byIanClagstone.jpg",
       "lat": 21.2962,

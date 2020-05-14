@@ -8,7 +8,7 @@
         "Food"
       ],
       "rating": "4",
-      "time": "Wednesday: 9am - 5pm",
+      "time": "Mon-Fri: 7:00am - 5:00pm",
       "description": "Very busy environment with a food source.",
       "image": "https://www.hawaii.edu/news/wp-content/uploads/2017/10/manoa-dunkin-donuts.jpg",
       "lat": 21.3010,
@@ -22,7 +22,7 @@
         "Spacious"
       ],
       "rating": "2",
-      "time": "Sunday: 7pm - 1am",
+      "time": "Sun-Sat: 7:00am - 1:00am",
       "description": "Spacious study space that never sleeps.",
       "image": "https://manoa.hawaii.edu/housing/sites/manoa.hawaii.edu.housing/files/pictures/backgrounds/ha-sm.jpg",
       "lat": 21.2949,
@@ -36,7 +36,7 @@
         "Hot"
       ],
       "rating": "3",
-      "time": "Friday: 3pm - 9pm",
+      "time": "Sun-Sat: 9:00am - 9:00pm",
       "description": "Study rooms for student housing residents with a nice breeze.",
       "image": "https://manoa.hawaii.edu/housing/sites/manoa.hawaii.edu.housing/files/pictures/backgrounds/gh_temp_2.jpg",
       "lat": 21.2960,
@@ -50,7 +50,7 @@
         "Creepy"
       ],
       "rating": 2,
-      "time": "Thursday: 1am - 4am",
+      "time": "Mon-Fri: 7:30am - 5:30pm",
       "description": "What is lurking in the shadows? Ghosts or future engineers?",
       "image": "https://media-exp1.licdn.com/dms/image/C561BAQHe1w8w3XPLpw/company-background_10000/0?e=2159024400&v=beta&t=9cUQCuBlHwPHXaeAgwKk0zaoJeIDSVyAKOe1SuwcHNw",
       "lat": 21.2968,
@@ -64,7 +64,7 @@
         "Vending Machine"
       ],
       "rating": 4,
-      "time": "Wednesday: 8am - 11pm",
+      "time": "Mon-Sat: 7:00am - 1:00am",
       "description": "Very productive space, if you don’t freeze to death first.",
       "image": "https://www.staradvertiser.com/wp-content/uploads/2017/01/web1_CTY-UH-Explosion-Report-084.jpg",
       "lat": 21.2974,
@@ -78,7 +78,7 @@
         "Off Campus"
       ],
       "rating": 5,
-      "time": "Friday: 4pm - 8pm",
+      "time": "Sun-Sat: 8:30am - 8:30pm",
       "description": "Boba, study, and chill. nuff said.",
       "image": "https://media-cdn.tripadvisor.com/media/photo-s/08/a9/89/fd/shaka-shaka-tea-express.jpg",
       "lat": 21.2921,
@@ -92,7 +92,7 @@
         "Alcohol"
       ],
       "rating": 4,
-      "time": "Friday: 6pm - 9pm",
+      "time": "Mon-Fri: 10:00am - 8:00pm",
       "description": "Great place to have a meal, study for a test, or just drink.",
       "image": "https://s3-media0.fl.yelpcdn.com/bphoto/Xtzgq8WqKR9O_xaXIduP6w/l.jpg",
       "lat": 21.2989,
@@ -106,7 +106,7 @@
         "Alcohol"
       ],
       "rating": 4,
-      "time": "Tuesday: 5pm -10pm",
+      "time": "Mon-Fri: 8:00am -4:00pm",
       "description": "Very limited and isolated tables scattered throughout the facility.",
       "image": "https://hawaii.edu/kuaana/wp-content/uploads/2014/03/University-of-Hawaii-Manoa-33C6F438.jpg",
       "lat": 21.3006,
@@ -120,7 +120,7 @@
         "Quiet"
       ],
       "rating": 1,
-      "time": "Saturday: 5pm - 8am",
+      "time": "Sun-Sat 10:00am - 11:00pm",
       "description": "Rich kids, cold AC, and mold. Can’t get better than this.",
       "image": "https://manoa.hawaii.edu/housing/sites/manoa.hawaii.edu.housing/files/pictures/backgrounds/fh_temp.jpg",
       "lat": 21.2957,
@@ -134,7 +134,7 @@
         "Noisy"
       ],
       "rating": 2,
-      "time": "Monday: 1pm - 8pm",
+      "time": "Mon-Fri: 8:00am - 6:00pm",
       "description": "Comfortable study spot, but relaxing as people pass by.",
       "image": "https://www.bestructural.com/wp-content/uploads/2015/03/Geophysics-653x366_c.jpg",
       "lat": 21.2975,
@@ -148,7 +148,7 @@
         "Noisy"
       ],
       "rating": 4,
-      "time": "Tuesday: 6pm - 8pm",
+      "time": "Tuesday: 6:30am - 7:00pm",
       "description": "Peaceful environment surrounded with bamboo. You won’t find any outlets here.",
       "image": "https://www.hawaii.edu/religion/wp-content/uploads/2015/09/sakamaki.jpg",
       "lat": 21.2976,
@@ -162,7 +162,7 @@
         "Social"
       ],
       "rating": 3,
-      "time": "Friday: 1pm - 4pm",
+      "time": "Mon-Fri: 8:00am - 10:00pm",
       "description": "Bustling food court with many other half-conscious students.",
       "image": "https://bloximages.newyork1.vip.townnews.com/manoanow.org/content/tncms/assets/v3/editorial/9/59/9591d620-48b1-11e6-ac0e-97b8953acd38/5785c2aa9b74e.image.png?resize=943%2C630",
       "lat": 21.2988,
@@ -176,7 +176,7 @@
         "Spacious"
       ],
       "rating": 5,
-      "time": "Wednesday: 5pm - 6pm",
+      "time": "Mon-Fri: 3:00pm - 1:00am",
       "description": "Great place for inspiration in the midst of study.",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTsz0u9l4qf3Ox3Q1msxcQwfBxiDWTUjHSBmQYskglEPhbg6Bzq&usqp=CAU",
       "lat": 21.2998,
@@ -188,7 +188,7 @@
         "Open Air"
       ],
       "rating": 2,
-      "time": "Tuesday: 7am - 12pm",
+      "time": "Mon-Thu: 7:00am - 3:00pm",
       "description": "Has a huge auditorium for classes. Sometimes empty for studying.",
       "image": "https://manoa.hawaii.edu/landscaping/images/elements/baobab480.png",
       "lat": 21.2994,
@@ -200,7 +200,7 @@
         "Peaceful"
       ],
       "rating": 2,
-      "time": "Tuesday: 8 am - 4 pm",
+      "time": "Mon-Sat: 8:00am - 5:00pm",
       "description": "Can’t study here unless you have access to the building.",
       "image": "https://www.eastwestcenter.org/sites/default/files/filemanager/images/menu_social/ewc_garden_2015.jpg",
       "lat": 21.2969,
@@ -212,7 +212,7 @@
         "Peaceful"
       ],
       "rating": 4,
-      "time": "All day",
+      "time": "Mon-Fri: 9:00am - 3:00pm",
       "description": "Simulates a traditional Korean building. Study like the ancients did!",
       "image": "https://manoa.hawaii.edu/wp/wp-content/uploads/2017/09/korean-studies-bldg-1024x597.jpg",
       "lat": 21.3011,
@@ -224,7 +224,7 @@
         "Noisy"
       ],
       "rating": 4,
-      "time": "All day",
+      "time": "Mon-Fri: 6:00am - 4:00pm",
       "description": "Seating outside to study while taking a coffee break.",
       "image": "https://i.ytimg.com/vi/d75XNDMqsJQ/maxresdefault.jpg",
       "lat": 21.2986,
@@ -236,7 +236,7 @@
         "Off-campus"
       ],
       "rating": 3,
-      "time": "Tuesday: 7 am - 5 pm",
+      "time": "All day",
       "description": "Further from campus, but a nice location with less people.",
       "image": "http://media.bizj.us/view/img/10823311/halemahanarendering4.jpg",
       "lat": 21.2914,
@@ -248,7 +248,7 @@
         "Off-campus"
       ],
       "rating": 1,
-      "time": "Wednesday: 8 am - 4 pm",
+      "time": "Sun-Sat: 7:00am - 10:00pm",
       "description": "No place to study, but great coffee.",
       "image": "https://cdn.cybergolf.com/images/730/1614111_height370_width560.jpg",
       "lat": 21.2913,
@@ -260,7 +260,7 @@
         "Small"
       ],
       "rating": 4,
-      "time": "Thursday: 2 am - 8 pm",
+      "time": "Tue-Fri: 9:00am - 4:00pm",
       "description": "Great coffee, lot’s of outlets.",
       "image": "https://s3-media0.fl.yelpcdn.com/bphoto/6u_dwgLVGP68_l3M5lq5fg/o.jpg",
       "lat": 21.3010,
@@ -274,7 +274,7 @@
         "Noisy"
       ],
       "rating": 2,
-      "time": "1pm - 5pm",
+      "time": "Sun-Sat: 6:00am - 10:00pm",
       "description": "Sub-par quality food and noisy location, making it hard to study.",
       "image": "https://s3-media0.fl.yelpcdn.com/bphoto/4JMBMgt3tfeYMoFGGEi_1A/o.jpg",
       "lat": 21.2929,
@@ -286,7 +286,7 @@
         "On-campus"
       ],
       "rating": 4,
-      "time": "Sunday: 8am - 12pm",
+      "time": "All day",
       "description": "It’s a dorm. Get ready to party.",
       "image": "https://images1.apartments.com/i2/ZdFRj-4hKKebltJ4DI7uzW9ltpq3oi7XBZhTd6euSZY/111/hale-mahana-apartments-honolulu-hi-main-lobby.jpg",
       "lat": 21.2914,
@@ -298,7 +298,7 @@
         "Food"
       ],
       "rating": 4,
-      "time": "All day",
+      "time": "Sun-Sat: 11:00am - 10:00pm",
       "description": "Great pizzas for low prices.",
       "image": "https://s3-media0.fl.yelpcdn.com/bphoto/letrdK2bxGNrQLKuU9ctTQ/o.jpg",
       "lat": 21.2914,
@@ -322,7 +322,7 @@
         "Quiet"
       ],
       "rating": 4,
-      "time": "All day",
+      "time": "Sun-Sat: 8:00am - 9:00pm",
       "description": "Plenty of resources to draw from for your assignments.",
       "image": "https://bloximages.newyork1.vip.townnews.com/manoanow.org/content/tncms/assets/v3/editorial/b/8f/b8f95eba-af1c-11e9-9735-db59edd847fe/5d3a150fc240f.image.jpg",
       "lat": 21.2965,
@@ -336,7 +336,7 @@
         "Social"
       ],
       "rating": 3,
-      "time": "Sunday: 8am - 12pm",
+      "time": "Weekends: 8:00am - 12:00am",
       "description": "Another dorm. Better than some, not the worst.",
       "image": "https://bloximages.newyork1.vip.townnews.com/manoanow.org/content/tncms/assets/v3/editorial/b/03/b03a660e-6307-11e4-b4b0-001a4bcf6878/5456f37329a54.image.jpg",
       "lat": 21.2961,
@@ -350,7 +350,7 @@
         "Off-campus"
       ],
       "rating": 5,
-      "time": "Saturday: 10am - 1:30pm",
+      "time": "Sun-Sat: 10:00am - 8:00pm",
       "description": "A nice place to cool off and eat banana-based ice cream while you study",
       "image": "https://s3-media0.fl.yelpcdn.com/bphoto/OAuKFTIOFZ-peL70WjJVew/o.jpg",
       "lat": 21.2998,
