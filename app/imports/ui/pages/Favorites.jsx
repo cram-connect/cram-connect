@@ -4,7 +4,7 @@ import { _ } from 'meteor/underscore';
 import { Grid, Card, Loader, Header } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
-import Location from '../components/Locations';
+import FavoriteLocations from '../components/FavoriteLocations';
 import { Locations } from '../../api/location/Locations';
 import { LocationsQualities } from '../../api/location/LocationQualities';
 import { ProfilesLocations } from '../../api/profile/ProfileLocations';
@@ -21,7 +21,7 @@ class Favorites extends React.Component {
   renderPage() {
     const email = Meteor.user().username;
     /**  pull locationsID associations */
-    const userLocationsIds = _.map(ProfilesLocations.find({ profile: email }).fetch(), function(locationId) { return { _id: locationId._id, location: locationId.location };});
+    const userLocationsIds = _.map(ProfilesLocations.find({ profile: email }).fetch(), function (locationId) { return { _id: locationId._id, location: locationId.location };});
     // console.log(userLocationsIds);
     /** check locations associated with specific user */
     const userLocations = _.pluck(ProfilesLocations.find({ profile: email }).fetch(), 'location');
@@ -36,7 +36,7 @@ class Favorites extends React.Component {
           <Grid.Column>
             <Header as="h2" textAlign="center" inverted>Favorites</Header>
             <Card.Group>
-              {favorites.map((spot, index) => <Location key={index}
+              {favorites.map((spot, index) => <FavoriteLocations key={index}
                                                                   spot={spot}
                                                                   userLocationsIds={userLocationsIds}
                                                                   ProfilesLocations={ProfilesLocations}

@@ -6,7 +6,7 @@ import { withRouter } from 'react-router-dom';
 import { _ } from 'meteor/underscore';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
-class Location extends React.Component {
+class FavoriteLocations extends React.Component {
   removeItem(docId) {
     /* eslint-disable-next-line */
     if( confirm("Do you really want to delete this study spot?") ) this.props.Locations.remove(docId);
@@ -73,7 +73,7 @@ class Location extends React.Component {
 /** qualities: PropTypes.array.isRequired, */
 
 /** Require a document to be passed to this component. */
-Location.propTypes = {
+FavoriteLocations.propTypes = {
   spot: PropTypes.object.isRequired,
   userLocationsIds: PropTypes.array.isRequired,
   Locations: PropTypes.object.isRequired,
@@ -81,4 +81,4 @@ Location.propTypes = {
 };
 
 /** Wrap this component in withRouter since we use the <Link> React Router element. */
-export default withRouter(Location);
+export default withRouter(FavoriteLocations);
