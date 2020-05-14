@@ -26,7 +26,7 @@ class NavBar extends React.Component {
                 <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add' inverted='true'>
                   <font style={menuNavText}>Add a Spot</font>
                 </Menu.Item>,
-                  <Menu.Item as={NavLink} activeClassName="active" exact to="/location" key='list'>
+                  <Menu.Item as={NavLink} activeClassName="active" exact to="/discover" key='discover'>
                     <font style={menuNavText}>Discover</font>
                   </Menu.Item>]
               ) : ''}

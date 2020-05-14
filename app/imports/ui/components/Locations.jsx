@@ -1,7 +1,7 @@
 import React from 'react';
-import { Card, Image, Rating } from 'semantic-ui-react';
+import { Card, Container, Image, Rating } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 class Location extends React.Component {
   removeItem(docId) {
@@ -11,6 +11,7 @@ class Location extends React.Component {
 
   render() {
     return (
+      <Link to={`/location/${this.props.spot._id}`}>
         <Card centered>
           <Image src={this.props.spot.image} wrapped ui={true} />
           <Card.Content>
@@ -26,6 +27,7 @@ class Location extends React.Component {
             </Card.Description>
           </Card.Content>
         </Card>
+      </Link>
     );
   }
 }

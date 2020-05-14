@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import Location from '../components/Locations';
 import { Locations } from '../../api/location/Locations';
 import { LocationsQualities } from '../../api/location/LocationQualities';
+import { Redirect } from 'react-router-dom';
 
 /** Capacity amount for each place */
 const options = [
@@ -23,13 +24,13 @@ const options = [
 ];
 
 /** Location items */
-const initialState = { isLoading: false, results: [], value: '' };
+const initialState = { isLoading: false, results: [], value: '', redirect: null };
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class SearchPage extends React.Component {
   state = initialState;
 
-  handleResultSelect = (e, { result }) => this.setState({ value: result.title });
+  handleResultSelect = (e, { result }) => this.setState({ redirect: `/location/${result.id}` });
 
   handleSearchChange = (e, { value }) => {
     this.setState({ isLoading: true, value });
@@ -45,6 +46,7 @@ class SearchPage extends React.Component {
       const searchResults = _.filter(source, isMatch);
       const ret = _.map(searchResults, function (location) {
         return {
+          id: location._id,
           title: location.locationName,
           description: location.description,
           image: location.image,
@@ -59,6 +61,9 @@ class SearchPage extends React.Component {
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {
+    if (this.state.redirect) {
+      return <Redirect to={this.state.redirect}/>;
+    }
     return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
   }
 
@@ -111,7 +116,7 @@ class SearchPage extends React.Component {
               />
             </Segment>
             <Segment>
-            <Card.Group>
+            <Card.Group centered>
               {this.props.locations.map((spot, index) => <Location key={index}
                                                                    spot={spot}
                                                                    Locations={Locations} />)}

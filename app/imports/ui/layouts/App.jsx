@@ -15,6 +15,7 @@ import SearchPage from '../pages/SearchPage';
 import AddLocation from '../pages/AddLocation';
 import EditProfile from '../pages/EditProfile';
 import Location from '../pages/Location';
+import Discover from '../pages/Discover';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -30,7 +31,8 @@ class App extends React.Component {
               <ProtectedRoute path="/search" component={SearchPage}/>
               <ProtectedRoute path="/profile" component={EditProfile}/>
               <ProtectedRoute path="/add" component={AddLocation}/>
-              <ProtectedRoute path="/location" component={Location}/>
+              <ProtectedRoute path="/discover" component={Discover}/>
+              <ProtectedRoute path="/location/:_id" component={Location}/>
               <ProtectedRoute path="/signout" component={Signout}/>
               <Route component={NotFound}/>
             </Switch>

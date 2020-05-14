@@ -8,6 +8,10 @@
   padding-bottom: 1px;
 }
 
+.ui.centered.card {
+  margin: 20px;
+}
+
 h2.ui.inverted.header{
   font-family: 'Lexend Deca';
   font-size: 54px;

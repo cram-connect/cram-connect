@@ -6,22 +6,21 @@ import PropTypes from 'prop-types';
 import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
 import { _ } from 'meteor/underscore';
 import { Map, Marker, TileLayer, Popup } from 'react-leaflet';
-import { Profiles } from '../../api/profile/Profiles';
 import { Locations } from '../../api/location/Locations';
 import { ProfilesLocations, profilesLocationsName } from '../../api/profile/ProfileLocations';
 import { LocationsQualities } from '../../api/location/LocationQualities';
 
 class Location extends React.Component {
+  state = { email: '' };
 
   handleClick(location, email) {
-    console.log(location, email);
-    const exists = ProfilesLocations.find({ profile: email, location: location.locationName }).fetch();
+    const exists = ProfilesLocations.find({ profile: email, location: location }).fetch();
     if (exists.length === 0) {
-      ProfilesLocations.insert({ profile: email, location: location.locationName });
+      ProfilesLocations.insert({ profile: email, location: location });
     } else {
       ProfilesLocations.remove({ _id: exists[0]._id });
     }
-
+    this.setState({ email: email });
   }
 
   render() {
@@ -31,14 +30,11 @@ class Location extends React.Component {
   renderPage() {
     const email = Meteor.user().username;
     const favoriteLocations = _.pluck(ProfilesLocations.find({ profile: email }).fetch(), 'location');
-    let location;
-    do {
-      location = _.sample(Locations.find().fetch());
-    } while (_.contains(favoriteLocations, location.locationName));
-    const locationQuality = _.pluck(LocationsQualities.find({ location: location.locationName }).fetch(), 'quality');
-    const number = location.rating;
+    const locationQuality = _.pluck(
+        LocationsQualities.find({ location: this.props.doc.locationName }).fetch(), 'quality');
+    const number = this.props.doc.rating;
     let heart;
-    if (_.contains(favoriteLocations, location)) {
+    if (_.contains(favoriteLocations, this.props.doc.locationName)) {
       heart = 'red';
     } else {
       heart = 'white';
@@ -50,11 +46,11 @@ class Location extends React.Component {
             <Grid columns='equal' centered>
               <Grid.Column>
                 <Label as='a' color='red' size='massive' ribbon>
-                  {location.locationName}
+                  {this.props.doc.locationName}
                 </Label>
               </Grid.Column>
               <Grid.Column textAlign='right'>
-                <Button color={heart} onClick={this.handleClick.bind(this, location, email)}>
+                <Button color={heart} onClick={this.handleClick.bind(this, this.props.doc.locationName, email)}>
                   <Icon name='heart'/> Favorite
                 </Button>
               </Grid.Column>
@@ -62,7 +58,7 @@ class Location extends React.Component {
             <Image
                 id="locationPage"
                 fluid
-                src={location.image}
+                src={this.props.doc.image}
             />
             </Segment>
             <Segment id="tags" inverted color='blue' raised>
@@ -83,23 +79,23 @@ class Location extends React.Component {
             <Grid columns={2}>
               <Grid.Column>
                 <Header inverted as='h3' dividing>Description</Header>
-                <p>{location.description}</p>
+                <p>{this.props.doc.description}</p>
               </Grid.Column>
               <Grid.Column>
                 <Header inverted as='h3' dividing>Hours of Operation</Header>
-                <p>{location.time}</p>
+                <p>{this.props.doc.time}</p>
               </Grid.Column>
             </Grid>
           </Segment>
           <Segment inverted color='blue'>
-            <Map center={[location.lat, location.lng]} zoom='20'>
+            <Map center={[this.props.doc.lat, this.props.doc.lng]} zoom='20'>
               <TileLayer
                   attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
-              <Marker position={[location.lat, location.lng]}>
+              <Marker position={[this.props.doc.lat, this.props.doc.lng]}>
                 <Popup>
-                  {location.locationName}
+                  {this.props.doc.locationName}
                 </Popup>
               </Marker>
             </Map>
@@ -122,7 +118,7 @@ export default withTracker(({ match }) => {
   const sub3 = Meteor.subscribe(profilesLocationsName);
   const sub4 = Meteor.subscribe('LocationQualities');
   return {
-    doc: Profiles.findOne(docId),
+    doc: Locations.findOne(docId),
     ready: sub1.ready() && sub2.ready() && sub3.ready() && sub4.ready(),
   };
 })(Location);
