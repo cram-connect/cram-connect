@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Image, Rating, Button, Icon } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import swal from 'sweetalert';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Redirect } from 'react-router-dom';
 import { _ } from 'meteor/underscore';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
@@ -28,6 +28,7 @@ class FavoriteLocations extends React.Component {
             swal('Poof! Your favorite has been removed!', {
               icon: 'success',
             });
+            location.reload();
           } else {
             swal('Got it. Your favorite is not going anywhere!');
           }
@@ -38,6 +39,8 @@ class FavoriteLocations extends React.Component {
     /** Extrapolate ID of location from ProfilesLocations to destroy favorite link */
     const locationID = _.find(this.props.userLocationsIds, locationId => locationId.location === this.props.spot.locationName);
     console.log(locationID);
+    console.log('spot:');
+    console.log(this.props.spot);
 
     return (
         <Card centered>
