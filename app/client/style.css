@@ -73,3 +73,11 @@ div.registerNow {
 div.ui.centered.card {
   margin: 1em;
 }
+
+.ui.grey.inverted.segment {
+  margin: 0;
+}
+
+div.ui.segment {
+  margin-top: 0;
+}

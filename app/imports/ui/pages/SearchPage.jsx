@@ -73,7 +73,7 @@ class SearchPage extends React.Component {
     return (
         <Grid centered>
           <Grid.Column width={3}>
-            <Segment>
+            <Segment inverted color='grey' disabled>
               <Grid columns='equal'>
                 <Grid.Column>
                   <Button.Group>
@@ -101,8 +101,8 @@ class SearchPage extends React.Component {
               </Grid>
             </Segment>
           </Grid.Column>
-          <Grid.Column width={11} textAlign='center'>
-            <Segment>
+          <Grid.Column width={10} textAlign='center'>
+            <Segment inverted color='grey'>
               <Search
                   fluid
                   loading={isLoading}
