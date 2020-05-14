@@ -20,7 +20,9 @@ class NavBar extends React.Component {
                 <Header inverted as='h1'>Cram Connect</Header>
               </Menu.Item>
               {this.props.currentUser ? (
-                [<Menu.Item as={NavLink} activeClassName="active" exact to="/favorites" key='Favorites'>Favorites</Menu.Item>,
+                [<Menu.Item as={NavLink} activeClassName="active" exact to="/favorites" key='Favorites'>
+                  <font style={menuNavText}>Favorites</font>
+                </Menu.Item>,
                 <Menu.Item as={NavLink} activeClassName="active" exact to="/search" key='search'>
                   <font style={menuNavText}>Search</font>
                 </Menu.Item>,

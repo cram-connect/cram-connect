@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Image, Rating, Button, Icon } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import swal from 'sweetalert';
-import { withRouter, Redirect } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import { _ } from 'meteor/underscore';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
@@ -37,38 +37,34 @@ class FavoriteLocations extends React.Component {
 
   render() {
     /** Extrapolate ID of location from ProfilesLocations to destroy favorite link */
-    const locationID = _.find(this.props.userLocationsIds, locationId => locationId.location === this.props.spot.locationName);
-    console.log(locationID);
-    console.log('spot:');
-    console.log(this.props.spot);
-
+    const locationID = _.find(this.props.userLocationsIds, locationId =>
+        locationId.location === this.props.spot.locationName);
     return (
-        <Card centered>
-          <Card.Content>
-            <Image src={this.props.spot.image} wrapped ui={true} />
-            <Card.Header>{this.props.spot.state}</Card.Header>
-            <Card.Meta>
-              <Rating icon='star' defaultRating={this.props.spot.rating} maxRating={4} />
-            </Card.Meta>
-            <Card.Meta>
-              hello
-            </Card.Meta>
-            <Card.Meta>
-              {this.props.spot.time}
-            </Card.Meta>
-            <Card.Description>
-              {this.props.spot.description}
-            </Card.Description>
-          </Card.Content>
-          <Card.Content extra>
-            <Button floated='right' animated onClick={() => this.removeFavorite(locationID._id)}>
-              <Button.Content visible>Remove</Button.Content>
-              <Button.Content hidden>
-                <Icon name='heartbeat'/>
-              </Button.Content>
-            </Button>
-          </Card.Content>
-        </Card>
+      <Card centered>
+        <Link to={`/location/${this.props.spot._id}`}>
+          <Image src={this.props.spot.image} wrapped ui={true} />
+        </Link>
+        <Card.Content>
+          <Card.Header>{this.props.spot.locationName}</Card.Header>
+          <Card.Meta>
+            <Rating icon='star' disabled defaultRating={this.props.spot.rating} maxRating={4} />
+          </Card.Meta>
+          <Card.Meta>
+            {this.props.spot.time}
+          </Card.Meta>
+          <Card.Description>
+            {this.props.spot.description}
+          </Card.Description>
+        </Card.Content>
+        <Card.Content extra>
+          <Button floated='right' animated onClick={() => this.removeFavorite(locationID._id)}>
+            <Button.Content visible>Remove</Button.Content>
+            <Button.Content hidden>
+              <Icon name='heartbeat'/>
+            </Button.Content>
+          </Button>
+        </Card.Content>
+      </Card>
     );
   }
 }
