@@ -11,23 +11,23 @@ class Location extends React.Component {
 
   render() {
     return (
-      <Link to={`/location/${this.props.spot._id}`}>
-        <Card centered>
-          <Image src={this.props.spot.image} wrapped ui={true} />
-          <Card.Content>
-            <Card.Header>{this.props.spot.locationName}</Card.Header>
-            <Card.Meta>
-              <Rating icon='star' disabled defaultRating={this.props.spot.rating} maxRating={4} />
-            </Card.Meta>
-            <Card.Meta>
-              {this.props.spot.time}
-            </Card.Meta>
-            <Card.Description>
-              {this.props.spot.description}
-            </Card.Description>
-          </Card.Content>
-        </Card>
-      </Link>
+        <Link to={`/location/${this.props.spot._id}`}>
+          <Card centered>
+            <Image src={this.props.spot.image} wrapped ui={true} />
+            <Card.Content>
+              <Card.Header>{this.props.spot.locationName}</Card.Header>
+              <Card.Meta>
+                <Rating icon='star' disabled defaultRating={this.props.spot.rating} maxRating={4} />
+              </Card.Meta>
+              <Card.Meta>
+                {this.props.spot.time}
+              </Card.Meta>
+              <Card.Description>
+                {this.props.spot.description}
+              </Card.Description>
+            </Card.Content>
+          </Card>
+        </Link>
     );
   }
 }
