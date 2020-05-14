@@ -1,6 +1,4 @@
 import { Meteor } from 'meteor/meteor';
-import { _ } from 'meteor/underscore';
-import { Contacts } from '../../api/contact/Contacts';
 import { Profiles } from '../../api/profile/Profiles';
 import { ProfilesLocations } from '../../api/profile/ProfileLocations';
 import { ProfilesQualities } from '../../api/profile/ProfileQualities';
@@ -9,20 +7,6 @@ import { Locations } from '../../api/location/Locations';
 import { LocationsQualities } from '../../api/location/LocationQualities';
 
 /* eslint-disable no-console */
-
-/** Initialize the database with a default data document. */
-function addContact(data) {
-  console.log(`  Adding: ${data.lastName} (${data.owner})`);
-  Contacts.insert(data);
-}
-
-/** Initialize the collection if empty. */
-if (Contacts.find().count() === 0) {
-  if (Meteor.settings.defaultContacts) {
-    console.log('Creating default contacts.');
-    Meteor.settings.defaultContacts.map(data => addContact(data));
-  }
-}
 
 /** Define an interest.  Has no effect if interest already exists. */
 function addQuality(quality) {
@@ -44,9 +28,9 @@ function addProfile({ firstName, lastName, email, major, qualities, favorites, i
 }
 
 /** Define a new location. Error if location already exists.  */
-function addLocation({ locationName, qualities, rating, time, description, image }) {
-  console.log(`Defining project ${locationName}`);
-  Locations.insert({ locationName, rating, time, description, image });
+function addLocation({ locationName, qualities, rating, time, description, image, lat, lng }) {
+  console.log(`Defining location ${locationName}`);
+  Locations.insert({ locationName, rating, time, description, image, lat, lng });
   _.map(qualities, (quality) => LocationsQualities.insert({ location: locationName, quality }));
   // Make sure qualities are defined in the Qualities collection if they weren't already.
   _.map(qualities, (quality) => addQuality(quality));

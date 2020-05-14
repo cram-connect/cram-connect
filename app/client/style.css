@@ -8,6 +8,10 @@
   padding-bottom: 1px;
 }
 
+.ui.centered.card {
+  margin: 20px;
+}
+
 h2.ui.inverted.header{
   font-family: 'Lexend Deca';
   font-size: 54px;
@@ -33,6 +37,14 @@ h3.ui.inverted.header {
 
 #stars {
   margin-right: 20px;
+}
+
+.leaflet-container {
+  height: 180px;
+}
+
+#mapid {
+  height: 180px;
 }
 
 .ui.icon.button {

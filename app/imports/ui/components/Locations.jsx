@@ -1,11 +1,8 @@
 import React from 'react';
-import { Card, Image, Rating, Button, Icon } from 'semantic-ui-react';
+import { Card, Container, Image, Rating } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import swal from 'sweetalert';
-import { withRouter } from 'react-router-dom';
-import { _ } from 'meteor/underscore';
+import { withRouter, Link } from 'react-router-dom';
 
-/** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class Location extends React.Component {
   removeItem(docId) {
     /* eslint-disable-next-line */
@@ -35,20 +32,14 @@ class Location extends React.Component {
   }
 
   render() {
-    /** Extrapolate ID of location from ProfilesLocations to destroy favorite link */
-    const locationID = _.find(this.props.userLocationsIds, locationId => locationId.location === this.props.spot.locationName);
-    console.log(locationID);
-
     return (
+      <Link to={`/location/${this.props.spot._id}`}>
         <Card centered>
+          <Image src={this.props.spot.image} wrapped ui={true} />
           <Card.Content>
-            <Image src={this.props.spot.image} wrapped ui={true} />
-            <Card.Header>{this.props.spot.state}</Card.Header>
+            <Card.Header>{this.props.spot.locationName}</Card.Header>
             <Card.Meta>
-              <Rating icon='star' defaultRating={this.props.spot.rating} maxRating={4} />
-            </Card.Meta>
-            <Card.Meta>
-              hello
+              <Rating icon='star' disabled defaultRating={this.props.spot.rating} maxRating={4} />
             </Card.Meta>
             <Card.Meta>
               {this.props.spot.time}
@@ -66,6 +57,7 @@ class Location extends React.Component {
             </Button>
           </Card.Content>
         </Card>
+      </Link>
     );
   }
 }
