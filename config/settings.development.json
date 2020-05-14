@@ -68,7 +68,9 @@
       "rating": 5,
       "time": "Monday: 5am - 11pm",
       "description": "Library near Sinclair circle.",
-      "image": "https://i.pinimg.com/originals/5e/b9/25/5eb9251699c57918a061adb36e44a3cc.jpg"
+      "image": "https://i.pinimg.com/originals/5e/b9/25/5eb9251699c57918a061adb36e44a3cc.jpg",
+      "lat": 21.2984,
+      "lng": -157.8205
     },
     {
       "locationName": "Hamilton Library",
@@ -80,7 +82,9 @@
       "rating": 3,
       "time": "Monday: 5am - 11pm",
       "description": "Quiet library with air conditioning.",
-      "image": "https://manoa.hawaii.edu/library/wp-content/uploads/2017/10/Sunny-Alcove.jpg"
+      "image": "https://manoa.hawaii.edu/library/wp-content/uploads/2017/10/Sunny-Alcove.jpg",
+      "lat": 21.3007,
+      "lng": -157.8162
     },
     {
       "locationName": "Music Department",
@@ -92,7 +96,9 @@
       "rating": "1",
       "time": "Tuesday: 7am - 10pm",
       "description": "Open and active study space in courtyard.",
-      "image": "https://historichawaii.org/wp-content/uploads/2014/02/Oahu_Honolulu_DoleStreet_2411_photo_byIanClagstone.jpg"
+      "image": "https://historichawaii.org/wp-content/uploads/2014/02/Oahu_Honolulu_DoleStreet_2411_photo_byIanClagstone.jpg",
+      "lat": 21.2962,
+      "lng": -157.8206
     }
   ],
   "loadAssetsFile":  true

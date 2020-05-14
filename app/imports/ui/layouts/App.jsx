@@ -12,7 +12,6 @@ import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
 import Favorites from '../pages/Favorites';
-import ListContactsAdmin from '../pages/ListContactsAdmin';
 import SearchPage from '../pages/SearchPage';
 import AddLocation from '../pages/AddLocation';
 import EditProfile from '../pages/EditProfile';
