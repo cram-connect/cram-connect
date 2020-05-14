@@ -17,7 +17,7 @@ const formSchema = new SimpleSchema({
   description: { type: String, label: <font style={property}>Description</font>, optional: true },
   qualities: { type: Array, label: <font style={property}>Qualities (Separated by Commas)</font>, optional: true },
   'qualities.$': { type: String },
-  image: { type: String, label: <font style={property}>Image URL</font>, optional: true },
+  image: { type: String, label: <font style={property}>Image URL (Landscape Orientation)</font>, optional: true },
   latitude: {
     type: Number, label: <font style={property}>Latitude (Must be between -90&#xb0; to +90&#xb0;)</font>,
     optional: true },

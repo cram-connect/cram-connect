@@ -101,7 +101,7 @@ class SearchPage extends React.Component {
               </Grid>
             </Segment>
           </Grid.Column>
-          <Grid.Column width={7} textAlign='center'>
+          <Grid.Column width={11} textAlign='center'>
             <Segment>
               <Search
                   fluid

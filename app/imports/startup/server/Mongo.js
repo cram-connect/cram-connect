@@ -55,10 +55,10 @@ if (Profiles.find().count() === 0) {
  * User count check is to make sure we don't load the file twice, which would generate errors due to duplicate info.
  * && (Meteor.users.find().count() < 7)
  */
-/*
+
 if ((Meteor.settings.loadAssetsFile)) {
   const assetsFileName = 'data.json';
   console.log(`Loading data from private/${assetsFileName}`);
   const jsonData = JSON.parse(Assets.getText(assetsFileName));
   jsonData.locations.map(location => addLocation(location));
-} */
+}

@@ -62,3 +62,14 @@ h3.ui.inverted.header {
 div.registerNow {
   margin-top: 7px;
 }
+
+.ui.cards .card .image img, .ui.card .image img {
+  display: block;
+  width: auto;
+  height: 250px;
+  border-radius: inherit;
+}
+
+div.ui.centered.card {
+  margin: 1em;
+}

@@ -37,8 +37,7 @@ class FavoriteLocations extends React.Component {
 
   render() {
     /** Extrapolate ID of location from ProfilesLocations to destroy favorite link */
-    const locationID = _.find(this.props.userLocationsIds, locationId =>
-        locationId.location === this.props.spot.locationName);
+    const locationID = _.find(this.props.userLocationsIds, locationId => locationId.location === this.props.spot.locationName);
     return (
       <Card centered>
         <Link to={`/location/${this.props.spot._id}`}>

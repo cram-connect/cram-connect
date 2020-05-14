@@ -10,7 +10,9 @@
       "rating": "4",
       "time": "Wednesday: 9am - 5pm",
       "description": "Very busy environment with a food source.",
-      "image": "https://www.hawaii.edu/news/wp-content/uploads/2017/10/manoa-dunkin-donuts.jpg"
+      "image": "https://www.hawaii.edu/news/wp-content/uploads/2017/10/manoa-dunkin-donuts.jpg",
+      "lat": 21.3010,
+      "lng": -157.8156
     },
     {
       "locationName": "Hale Aloha Dorms",
@@ -22,7 +24,9 @@
       "rating": "2",
       "time": "Sunday: 7pm - 1am",
       "description": "Spacious study space that never sleeps.",
-      "image": "https://manoa.hawaii.edu/housing/sites/manoa.hawaii.edu.housing/files/pictures/backgrounds/ha-sm.jpg"
+      "image": "https://manoa.hawaii.edu/housing/sites/manoa.hawaii.edu.housing/files/pictures/backgrounds/ha-sm.jpg",
+      "lat": 21.2949,
+      "lng": -157.8133
     },
     {
       "locationName": "Gateway House Dorms",
@@ -34,7 +38,9 @@
       "rating": "3",
       "time": "Friday: 3pm - 9pm",
       "description": "Study rooms for student housing residents with a nice breeze.",
-      "image": "https://manoa.hawaii.edu/housing/sites/manoa.hawaii.edu.housing/files/pictures/backgrounds/gh_temp_2.jpg"
+      "image": "https://manoa.hawaii.edu/housing/sites/manoa.hawaii.edu.housing/files/pictures/backgrounds/gh_temp_2.jpg",
+      "lat": 21.2960,
+      "lng": -157.8147
     },
     {
       "locationName": "Holmes Hall",
@@ -46,7 +52,9 @@
       "rating": 2,
       "time": "Thursday: 1am - 4am",
       "description": "What is lurking in the shadows? Ghosts or future engineers?",
-      "image": "https://media-exp1.licdn.com/dms/image/C561BAQHe1w8w3XPLpw/company-background_10000/0?e=2159024400&v=beta&t=9cUQCuBlHwPHXaeAgwKk0zaoJeIDSVyAKOe1SuwcHNw"
+      "image": "https://media-exp1.licdn.com/dms/image/C561BAQHe1w8w3XPLpw/company-background_10000/0?e=2159024400&v=beta&t=9cUQCuBlHwPHXaeAgwKk0zaoJeIDSVyAKOe1SuwcHNw",
+      "lat": 21.2968,
+      "lng": -157.8165
     },
     {
       "locationName": "POST Building",
@@ -58,7 +66,9 @@
       "rating": 4,
       "time": "Wednesday: 8am - 11pm",
       "description": "Very productive space, if you don’t freeze to death first.",
-      "image": "https://www.staradvertiser.com/wp-content/uploads/2017/01/web1_CTY-UH-Explosion-Report-084.jpg"
+      "image": "https://www.staradvertiser.com/wp-content/uploads/2017/01/web1_CTY-UH-Explosion-Report-084.jpg",
+      "lat": 21.2974,
+      "lng": -157.8165
     },
     {
       "locationName": "Shaka Shaka Tea Express",
@@ -70,7 +80,9 @@
       "rating": 5,
       "time": "Friday: 4pm - 8pm",
       "description": "Boba, study, and chill. nuff said.",
-      "image": "https://media-cdn.tripadvisor.com/media/photo-s/08/a9/89/fd/shaka-shaka-tea-express.jpg"
+      "image": "https://media-cdn.tripadvisor.com/media/photo-s/08/a9/89/fd/shaka-shaka-tea-express.jpg",
+      "lat": 21.2921,
+      "lng": -157.8216
     },
     {
       "locationName": "Ba-Le Sandwich Shop",
@@ -82,7 +94,9 @@
       "rating": 4,
       "time": "Friday: 6pm - 9pm",
       "description": "Great place to have a meal, study for a test, or just drink.",
-      "image": "https://s3-media0.fl.yelpcdn.com/bphoto/Xtzgq8WqKR9O_xaXIduP6w/l.jpg"
+      "image": "https://s3-media0.fl.yelpcdn.com/bphoto/Xtzgq8WqKR9O_xaXIduP6w/l.jpg",
+      "lat": 21.2989,
+      "lng": -157.8197
     },
     {
       "locationName": "Queen Liliuokalani Center For Student Services",
@@ -94,7 +108,9 @@
       "rating": 4,
       "time": "Tuesday: 5pm -10pm",
       "description": "Very limited and isolated tables scattered throughout the facility.",
-      "image": "https://hawaii.edu/kuaana/wp-content/uploads/2014/03/University-of-Hawaii-Manoa-33C6F438.jpg"
+      "image": "https://hawaii.edu/kuaana/wp-content/uploads/2014/03/University-of-Hawaii-Manoa-33C6F438.jpg",
+      "lat": 21.3006,
+      "lng": -157.8184
     },
     {
       "locationName": "Frear Hall",
@@ -106,7 +122,9 @@
       "rating": 1,
       "time": "Saturday: 5pm - 8am",
       "description": "Rich kids, cold AC, and mold. Can’t get better than this.",
-      "image": "https://manoa.hawaii.edu/housing/sites/manoa.hawaii.edu.housing/files/pictures/backgrounds/fh_temp.jpg"
+      "image": "https://manoa.hawaii.edu/housing/sites/manoa.hawaii.edu.housing/files/pictures/backgrounds/fh_temp.jpg",
+      "lat": 21.2957,
+      "lng": -157.8139
     },
     {
       "locationName": "Hawaii Institute of Geophysics",
@@ -118,7 +136,9 @@
       "rating": 2,
       "time": "Monday: 1pm - 8pm",
       "description": "Comfortable study spot, but relaxing as people pass by.",
-      "image": "https://www.bestructural.com/wp-content/uploads/2015/03/Geophysics-570x570_c.jpg"
+      "image": "https://www.bestructural.com/wp-content/uploads/2015/03/Geophysics-653x366_c.jpg",
+      "lat": 21.2975,
+      "lng": -157.8162
     },
     {
       "locationName": "Sakamaki Hall",
@@ -130,7 +150,9 @@
       "rating": 4,
       "time": "Tuesday: 6pm - 8pm",
       "description": "Peaceful environment surrounded with bamboo. You won’t find any outlets here.",
-      "image": "https://www.hawaii.edu/religion/wp-content/uploads/2015/09/sakamaki.jpg"
+      "image": "https://www.hawaii.edu/religion/wp-content/uploads/2015/09/sakamaki.jpg",
+      "lat": 21.2976,
+      "lng": -157.8171
     },
     {
       "locationName": "Campus Center Food Court",
@@ -142,7 +164,9 @@
       "rating": 3,
       "time": "Friday: 1pm - 4pm",
       "description": "Bustling food court with many other half-conscious students.",
-      "image": "https://bloximages.newyork1.vip.townnews.com/manoanow.org/content/tncms/assets/v3/editorial/9/59/9591d620-48b1-11e6-ac0e-97b8953acd38/5785c2aa9b74e.image.png?resize=943%2C630"
+      "image": "https://bloximages.newyork1.vip.townnews.com/manoanow.org/content/tncms/assets/v3/editorial/9/59/9591d620-48b1-11e6-ac0e-97b8953acd38/5785c2aa9b74e.image.png?resize=943%2C630",
+      "lat": 21.2988,
+      "lng": -157.8191
     },
     {
       "locationName": "Architecture Building",
@@ -154,7 +178,9 @@
       "rating": 5,
       "time": "Wednesday: 5pm - 6pm",
       "description": "Great place for inspiration in the midst of study.",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTsz0u9l4qf3Ox3Q1msxcQwfBxiDWTUjHSBmQYskglEPhbg6Bzq&usqp=CAU"
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTsz0u9l4qf3Ox3Q1msxcQwfBxiDWTUjHSBmQYskglEPhbg6Bzq&usqp=CAU",
+      "lat": 21.2998,
+      "lng": -157.8207
     },
     {
       "locationName": "Art Building",
@@ -164,7 +190,9 @@
       "rating": 2,
       "time": "Tuesday: 7am - 12pm",
       "description": "Has a huge auditorium for classes. Sometimes empty for studying.",
-      "image": "https://manoa.hawaii.edu/landscaping/images/elements/baobab480.png"
+      "image": "https://manoa.hawaii.edu/landscaping/images/elements/baobab480.png",
+      "lat": 21.2994,
+      "lng": -157.8175
     },
     {
       "locationName": "East-West Center",
@@ -174,7 +202,9 @@
       "rating": 2,
       "time": "Tuesday: 8 am - 4 pm",
       "description": "Can’t study here unless you have access to the building.",
-      "image": "https://www.eastwestcenter.org/sites/default/files/filemanager/images/menu_social/ewc_garden_2015.jpg"
+      "image": "https://www.eastwestcenter.org/sites/default/files/filemanager/images/menu_social/ewc_garden_2015.jpg",
+      "lat": 21.2969,
+      "lng": -157.8148
     },
     {
       "locationName": "Korean Studies Center",
@@ -184,7 +214,9 @@
       "rating": 4,
       "time": "All day",
       "description": "Simulates a traditional Korean building. Study like the ancients did!",
-      "image": "https://manoa.hawaii.edu/wp/wp-content/uploads/2017/09/korean-studies-bldg-1024x597.jpg"
+      "image": "https://manoa.hawaii.edu/wp/wp-content/uploads/2017/09/korean-studies-bldg-1024x597.jpg",
+      "lat": 3011,
+      "lng": -157.8141
     },
     {
       "locationName": "Starbucks (On-campus)",
@@ -194,7 +226,9 @@
       "rating": 4,
       "time": "All day",
       "description": "Seating outside to study while taking a coffee break.",
-      "image": "https://i.ytimg.com/vi/d75XNDMqsJQ/maxresdefault.jpg"
+      "image": "https://i.ytimg.com/vi/d75XNDMqsJQ/maxresdefault.jpg",
+      "lat": 21.2986,
+      "lng": -157.8189
     },
     {
       "locationName": "Starbucks (Off-campus)",
@@ -204,7 +238,9 @@
       "rating": 3,
       "time": "Tuesday: 7 am - 5 pm",
       "description": "Further from campus, but a nice location with less people.",
-      "image": "https://s3-media0.fl.yelpcdn.com/bphoto/E_gSbwSqnA3p9F72zTOASQ/o.jpg"
+      "image": "http://media.bizj.us/view/img/10823311/halemahanarendering4.jpg",
+      "lat": 21.2914,
+      "lng": -157.8215
     },
     {
       "locationName": "Glazer's Coffee",
@@ -214,7 +250,9 @@
       "rating": 1,
       "time": "Wednesday: 8 am - 4 pm",
       "description": "No place to study, but great coffee.",
-      "image": "https://cdn.cybergolf.com/images/730/1614111_height370_width560.jpg"
+      "image": "https://cdn.cybergolf.com/images/730/1614111_height370_width560.jpg",
+      "lat": 21.2913,
+      "lng": -157.8204
     },
     {
       "locationName": "The Bean Counter",
@@ -224,7 +262,9 @@
       "rating": 4,
       "time": "Thursday: 2 am - 8 pm",
       "description": "Great coffee, lot’s of outlets.",
-      "image": "https://s3-media0.fl.yelpcdn.com/bphoto/6u_dwgLVGP68_l3M5lq5fg/o.jpg"
+      "image": "https://s3-media0.fl.yelpcdn.com/bphoto/6u_dwgLVGP68_l3M5lq5fg/o.jpg",
+      "lat": 21.3010,
+      "lng": -157.8202
     },
     {
       "locationName": "Burger King",
@@ -236,7 +276,9 @@
       "rating": 2,
       "time": "1pm - 5pm",
       "description": "Sub-par quality food and noisy location, making it hard to study.",
-      "image": "https://s3-media0.fl.yelpcdn.com/bphoto/4JMBMgt3tfeYMoFGGEi_1A/o.jpg"
+      "image": "https://s3-media0.fl.yelpcdn.com/bphoto/4JMBMgt3tfeYMoFGGEi_1A/o.jpg",
+      "lat": 21.2929,
+      "lng": -157.8227
     },
     {
       "locationName": "Hale Mahana",
@@ -246,7 +288,9 @@
       "rating": 4,
       "time": "Sunday: 8am - 12pm",
       "description": "It’s a dorm. Get ready to party.",
-      "image": "https://images1.apartments.com/i2/ZdFRj-4hKKebltJ4DI7uzW9ltpq3oi7XBZhTd6euSZY/111/hale-mahana-apartments-honolulu-hi-main-lobby.jpg"
+      "image": "https://images1.apartments.com/i2/ZdFRj-4hKKebltJ4DI7uzW9ltpq3oi7XBZhTd6euSZY/111/hale-mahana-apartments-honolulu-hi-main-lobby.jpg",
+      "lat": 21.2914,
+      "lng": -157.8215
     },
     {
       "locationName": "Pieology",
@@ -256,7 +300,9 @@
       "rating": 4,
       "time": "All day",
       "description": "Great pizzas for low prices.",
-      "image": "https://s3-media0.fl.yelpcdn.com/bphoto/letrdK2bxGNrQLKuU9ctTQ/o.jpg"
+      "image": "https://s3-media0.fl.yelpcdn.com/bphoto/letrdK2bxGNrQLKuU9ctTQ/o.jpg",
+      "lat": 21.2914,
+      "lng": -157.8218
     },
     {
       "locationName": "Bilger Hall",
@@ -266,7 +312,9 @@
       "rating": 3,
       "time": "All day",
       "description": "Lot’s of classes here.",
-      "image": "https://s3-media0.fl.yelpcdn.com/bphoto/mRgwQLiZ8YiVMecvz4VM1w/o.jpg"
+      "image": "https://s3-media0.fl.yelpcdn.com/bphoto/mRgwQLiZ8YiVMecvz4VM1w/o.jpg",
+      "lat": 21.2295,
+      "lng": -157.8167
     },
     {
       "locationName": "Law Library",
@@ -276,7 +324,9 @@
       "rating": 4,
       "time": "All day",
       "description": "Plenty of resources to draw from for your assignments.",
-      "image": "https://bloximages.newyork1.vip.townnews.com/manoanow.org/content/tncms/assets/v3/editorial/b/8f/b8f95eba-af1c-11e9-9735-db59edd847fe/5d3a150fc240f.image.jpg"
+      "image": "https://bloximages.newyork1.vip.townnews.com/manoanow.org/content/tncms/assets/v3/editorial/b/8f/b8f95eba-af1c-11e9-9735-db59edd847fe/5d3a150fc240f.image.jpg",
+      "lat": 21.2965,
+      "lng": -157.8188
     },
     {
       "locationName": "Johnson Hall",
@@ -288,7 +338,9 @@
       "rating": 3,
       "time": "Sunday: 8am - 12pm",
       "description": "Another dorm. Better than some, not the worst.",
-      "image": "https://bloximages.newyork1.vip.townnews.com/manoanow.org/content/tncms/assets/v3/editorial/b/03/b03a660e-6307-11e4-b4b0-001a4bcf6878/5456f37329a54.image.jpg"
+      "image": "https://bloximages.newyork1.vip.townnews.com/manoanow.org/content/tncms/assets/v3/editorial/b/03/b03a660e-6307-11e4-b4b0-001a4bcf6878/5456f37329a54.image.jpg",
+      "lat": 21.2961,
+      "lng": -157.8157
     },
     {
       "locationName": "Banan",
@@ -300,7 +352,9 @@
       "rating": 5,
       "time": "Saturday: 10am - 1:30pm",
       "description": "A nice place to cool off and eat banana-based ice cream while you study",
-      "image": "https://s3-media0.fl.yelpcdn.com/bphoto/OAuKFTIOFZ-peL70WjJVew/o.jpg"
+      "image": "https://s3-media0.fl.yelpcdn.com/bphoto/OAuKFTIOFZ-peL70WjJVew/o.jpg",
+      "lat": 21.2998,
+      "lng": -157.8214
     }
   ]
 }

@@ -13,7 +13,7 @@ class Location extends React.Component {
     return (
         <Link to={`/location/${this.props.spot._id}`}>
           <Card centered>
-            <Image src={this.props.spot.image} wrapped ui={true} />
+            <Image src={this.props.spot.image} wrapped ui={true} style={{ height: 250 }}/>
             <Card.Content>
               <Card.Header>{this.props.spot.locationName}</Card.Header>
               <Card.Meta>
