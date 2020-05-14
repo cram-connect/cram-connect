@@ -1,4 +1,9 @@
 {
+  "galaxy.meteor.com": {
+    "env": {
+      "MONGO_URL": "mongodb+srv://admin:y1nvKOw9vlqdbHYA@cluster0-yau88.mongodb.net/test?retryWrites=true&w=majority"
+    }
+  },
   "defaultAccounts": [
     { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
     { "email": "saharama@hawaii.edu", "password": "changeme" },
