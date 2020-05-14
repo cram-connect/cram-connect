@@ -32,7 +32,7 @@ class Favorites extends React.Component {
     // console.log(favorites);
 
   return (
-        <Grid centered>
+        <Grid centered container>
           <Grid.Column>
             <Header as="h2" textAlign="center" inverted>Favorites</Header>
             <Card.Group>
