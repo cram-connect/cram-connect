@@ -13,6 +13,7 @@ class Contact extends React.Component {
   }
 
   render() {
+    console.log(this.props.contact);
     return (
         <Card centered>
           <Card.Content>

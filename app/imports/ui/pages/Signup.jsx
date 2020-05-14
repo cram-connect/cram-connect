@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, Redirect } from 'react-router-dom';
-import { Container, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
+import { Container, Form, Grid, Header, Message, Segment, Button } from 'semantic-ui-react';
 import { Accounts } from 'meteor/accounts-base';
 
 /**
@@ -21,8 +21,9 @@ class Signup extends React.Component {
 
   /** Handle Signup submission. Create user account and a profile entry, then redirect to the home page. */
   submit = () => {
-    const { email, password } = this.state;
-    Accounts.createUser({ email, username: email, password }, (err) => {
+    const { firstName, lastName, major, image, email, password } = this.state;
+    Accounts.createUser({ email, username: email, password },
+        (err) => {
       if (err) {
         this.setState({ error: err.reason });
       } else {
@@ -40,32 +41,77 @@ class Signup extends React.Component {
     }
     return (
       <Container>
-        <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
-          <Grid.Column>
-            <Header as="h2" textAlign="center" inverted>
-              Register your account
+        <Header as="h2" textAlign="center" inverted>
+          Register your account
             </Header>
             <Form onSubmit={this.submit}>
               <Segment stacked>
+                <Form.Group widths='equal'>
+                  <Form.Input
+                      required
+                      label="First Name"
+                      name="firstName"
+                      type="firstname"
+                      placeholder="First name"
+                      onChange={this.handleChange}
+                  />
+                  <Form.Input
+                      required
+                      label="Last Name"
+                      name="lastName"
+                      placeholder="Last name"
+                      type="lastName"
+                      onChange={this.handleChange}
+                  />
+                </Form.Group>
+                <Form.Group widths='equal'>
+                  <Form.Input
+                      required
+                      label="Email"
+                      name="email"
+                      type="email"
+                      placeholder="E-mail address"
+                      onChange={this.handleChange}
+                  />
+                  <Form.Input
+                      label="Major"
+                      name="major"
+                      placeholder="Major"
+                      type="major"
+                      onChange={this.handleChange}
+                  />
+                </Form.Group>
+                <Form.Group widths='equal'>
+                  <Form.Input
+                      required
+                      label="Password"
+                      name="password"
+                      placeholder="Password"
+                      type="password"
+                      onChange={this.handleChange}
+                  />
+                  <Form.Input
+                      label="Image URL"
+                      name="imageUrl"
+                      placeholder="URL"
+                      type="imageUrl"
+                      onChange={this.handleChange}
+                  />
+                </Form.Group>
                 <Form.Input
-                  label="Email"
-                  icon="user"
-                  iconPosition="left"
-                  name="email"
-                  type="email"
-                  placeholder="E-mail address"
-                  onChange={this.handleChange}
+                    label="Preferences"
+                    name="preferece"
+                    type="preference"
+                    onChange={this.handleChange}
                 />
-                <Form.Input
-                  label="Password"
-                  icon="lock"
-                  iconPosition="left"
-                  name="password"
-                  placeholder="Password"
-                  type="password"
-                  onChange={this.handleChange}
-                />
-                <Form.Button content="Submit"/>
+                <Grid centered columns={2}>
+                <Grid.Column>
+                  <Form.Button fluid animated='fade'>
+                    <Button.Content visible>Submit</Button.Content>
+                    <Button.Content hidden>Let&apos;s Get Crammin&apos;!</Button.Content>
+                  </Form.Button>
+                </Grid.Column>
+                </Grid>
               </Segment>
             </Form>
             <Message>
@@ -80,8 +126,6 @@ class Signup extends React.Component {
                 content={this.state.error}
               />
             )}
-          </Grid.Column>
-        </Grid>
       </Container>
     );
   }

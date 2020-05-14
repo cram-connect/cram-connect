@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link, Redirect } from 'react-router-dom';
+import { NavLink, Redirect } from 'react-router-dom';
 import { Meteor } from 'meteor/meteor';
-import { Container, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
+import { Button, Container, Form, Grid, Header, Message } from 'semantic-ui-react';
+import Divider from 'semantic-ui-react/dist/commonjs/elements/Divider';
 
 /**
  * Signin page overrides the form’s submit event and call Meteor’s loginWithPassword().
@@ -35,6 +36,8 @@ export default class Signin extends React.Component {
 
   /** Render the signin form. */
   render() {
+    const loginHeader = { paddingTop: '15px', color: 'white', fontSize: '30px', fontFamily: 'Pacifico' };
+    const register = { paddingTop: '15px', color: 'white', fontSize: '20px' };
     const { from } = this.props.location.state || { from: { pathname: '/' } };
     // if correct authentication, redirect to page instead of login screen
     if (this.state.redirectToReferer) {
@@ -42,50 +45,55 @@ export default class Signin extends React.Component {
     }
     // Otherwise return the Login form.
     return (
-      <Container>
-        <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
-          <Grid.Column>
-            <Header as="h2" textAlign="center" inverted>
-              Login to your account
-            </Header>
-            <Form onSubmit={this.submit}>
-              <Segment stacked>
-                <Form.Input
-                  label="Email"
-                  icon="user"
-                  iconPosition="left"
-                  name="email"
-                  type="email"
-                  placeholder="E-mail address"
-                  onChange={this.handleChange}
+        <Container>
+          <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
+            <Grid.Column>
+              <Header textAlign="center" inverted>
+                <font style={loginHeader}>Login to Your Account</font>
+              </Header>
+              <Form onSubmit={this.submit}>
+                <Form.Input focus
+                    // label="Email"
+                            icon="at"
+                            iconPosition="left"
+                            name="email"
+                            type="email"
+                            placeholder="E-mail"
+                            onChange={this.handleChange}
                 />
-                <Form.Input
-                  label="Password"
-                  icon="lock"
-                  iconPosition="left"
-                  name="password"
-                  placeholder="Password"
-                  type="password"
-                  onChange={this.handleChange}
+                <Form.Input focus
+                    // label="Password"
+                            icon="lock"
+                            iconPosition="left"
+                            name="password"
+                            placeholder="Password"
+                            type="password"
+                            onChange={this.handleChange}
                 />
-                <Form.Button content="Submit"/>
-              </Segment>
-            </Form>
-            <Message>
-              <Link to="/signup">Click here to Register</Link>
-            </Message>
-            {this.state.error === '' ? (
-              ''
-            ) : (
-              <Message
-                error
-                header="Login was not successful"
-                content={this.state.error}
-              />
-            )}
-          </Grid.Column>
-        </Grid>
-      </Container>
+                <center><Form.Button basic inverted content="Go"/></center>
+              </Form>
+              <br/>
+              <Divider inverted></Divider>
+              <center>
+                <font style={register}>Don&#39;t have an Account?</font>
+                <br/>
+                <div className="registerNow">
+                  <Button basic inverted icon={'user plus'} content="Register Now" as={NavLink} exact to="/signup">
+                  </Button>
+                </div>
+              </center>
+              {this.state.error === '' ? (
+                  ''
+              ) : (
+                  <Message
+                      error
+                      header="Login was not successful"
+                      content={this.state.error}
+                  />
+              )}
+            </Grid.Column>
+          </Grid>
+        </Container>
     );
   }
 }

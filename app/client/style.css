@@ -9,11 +9,43 @@
 }
 
 h2.ui.inverted.header{
+  font-family: 'Lexend Deca';
   font-size: 54px;
+  padding-top: 50px;
+  padding-bottom: 10px;
+}
+
+h3.ui.inverted.header {
+  font-size: 25px;
+  font-family: 'Lexend Deca', sans-serif;
+}
+
+#locationPage.ui.fluid.image {
+  height: 400px;
+  overflow: hidden;
+}
+
+#tags {
+  padding-top: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#stars {
+  margin-right: 20px;
 }
 
 .ui.icon.button {
   color: white;
   background-color: transparent;
   padding-bottom: 1px;
+}
+
+.ui.form .fields .field .ui.input input, .ui.form .field .ui.input input {
+  width: auto;
+  background-color: #b0eab4;
+}
+
+div.registerNow {
+  margin-top: 7px;
 }

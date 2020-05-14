@@ -22,7 +22,7 @@ class Landing extends React.Component {
                 Are you tired of being unable to focus on your assignments because of your crazy roommate?
                 Perhaps you&#39;re too comfortable in the quiet of your room and need a fast-paced environment
                 to get the juices flowing?
-                Cram Connect allows you to discover study spots throughout the UH Manoa campus and connect with
+                Cram Connect lets you discover study spots throughout UH Manoa and connect with
                 other students who are looking for their perfect study environment.
               </font>
               <br/>
