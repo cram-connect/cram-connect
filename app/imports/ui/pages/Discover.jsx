@@ -1,11 +1,10 @@
 import React from 'react';
-import { Button, Grid, Loader, Rating, Icon, Header, Segment, Image, Container, Label } from 'semantic-ui-react';
+import { Grid, Loader, Rating, Header, Segment, Image, Container, Label } from 'semantic-ui-react';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
 import { _ } from 'meteor/underscore';
-import { Map, Marker, TileLayer, Popup } from 'react-leaflet';
 import { Profiles } from '../../api/profile/Profiles';
 import { Locations } from '../../api/location/Locations';
 import { ProfilesLocations, profilesLocationsName } from '../../api/profile/ProfileLocations';
@@ -13,57 +12,42 @@ import { LocationsQualities } from '../../api/location/LocationQualities';
 
 class Location extends React.Component {
 
-  handleClick(location, email) {
-    console.log(location, email);
-    const exists = ProfilesLocations.find({ profile: email, location: location.locationName }).fetch();
-    if (exists.length === 0) {
-      ProfilesLocations.insert({ profile: email, location: location.locationName });
-    } else {
-      ProfilesLocations.remove({ _id: exists[0]._id });
-    }
-
-  }
-
   render() {
     return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
   }
 
   renderPage() {
     const email = Meteor.user().username;
-    const favoriteLocations = _.pluck(ProfilesLocations.find({ profile: email }).fetch(), 'location');
-    let location;
-    do {
-      location = _.sample(Locations.find().fetch());
-    } while (_.contains(favoriteLocations, location.locationName));
-    const locationQuality = _.pluck(LocationsQualities.find({ location: location.locationName }).fetch(), 'quality');
+    const location = _.sample(Locations.find().fetch());
     const number = location.rating;
+    console.log(location.rating);
+    const locationQuality = _.pluck(LocationsQualities.find({ location: location.locationName }).fetch(), 'quality');
+    const favoriteLocations = _.pluck(ProfilesLocations.find({ profile: email }).fetch(), 'location');
     let heart;
     if (_.contains(favoriteLocations, location)) {
-      heart = 'red';
+      heart = 1;
     } else {
-      heart = 'white';
+      heart = 0;
     }
     return (
         <Container>
           <Segment.Group>
             <Segment inverted color='blue' raised>
-            <Grid columns='equal' centered>
-              <Grid.Column>
-                <Label as='a' color='red' size='massive' ribbon>
-                  {location.locationName}
-                </Label>
-              </Grid.Column>
-              <Grid.Column textAlign='right'>
-                <Button color={heart} onClick={this.handleClick.bind(this, location, email)}>
-                  <Icon name='heart'/> Favorite
-                </Button>
-              </Grid.Column>
-            </Grid>
-            <Image
-                id="locationPage"
-                fluid
-                src={location.image}
-            />
+              <Grid columns='equal' centered>
+                <Grid.Column>
+                  <Label as='a' color='red' size='massive' ribbon>
+                    {location.locationName}
+                  </Label>
+                </Grid.Column>
+                <Grid.Column textAlign='right'>
+                  <Rating size='huge' icon='heart' defaultRating={heart} maxRating={1} onRate={this.handleRate()}/>
+                </Grid.Column>
+              </Grid>
+              <Image
+                  id="locationPage"
+                  fluid
+                  src={location.image}
+              />
             </Segment>
             <Segment id="tags" inverted color='blue' raised>
               <Grid columns={3}>
@@ -90,19 +74,6 @@ class Location extends React.Component {
                 <p>{location.time}</p>
               </Grid.Column>
             </Grid>
-          </Segment>
-          <Segment inverted color='blue'>
-            <Map center={[location.lat, location.lng]} zoom='20'>
-              <TileLayer
-                  attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              />
-              <Marker position={[location.lat, location.lng]}>
-                <Popup>
-                  {location.locationName}
-                </Popup>
-              </Marker>
-            </Map>
           </Segment>
         </Container>
     );

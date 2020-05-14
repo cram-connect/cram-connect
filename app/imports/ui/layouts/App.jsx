@@ -11,6 +11,7 @@ import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
+import SearchPage from '../pages/SearchPage';
 import AddLocation from '../pages/AddLocation';
 import EditProfile from '../pages/EditProfile';
 import Location from '../pages/Location';
@@ -26,6 +27,7 @@ class App extends React.Component {
               <Route exact path="/" component={Landing}/>
               <Route path="/signin" component={Signin}/>
               <Route path="/signup" component={Signup}/>
+              <ProtectedRoute path="/search" component={SearchPage}/>
               <ProtectedRoute path="/profile" component={EditProfile}/>
               <ProtectedRoute path="/add" component={AddLocation}/>
               <ProtectedRoute path="/location" component={Location}/>
